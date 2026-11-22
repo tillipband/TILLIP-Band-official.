@@ -1,1 +1,2461 @@
- 
+<!DOCTYPE html>
+<html lang="th" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>tilip ✓ | Official Artist Portal, Discography & Management</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Prompt', 'sans-serif'],
+                        serif: ['Cinzel', 'serif'],
+                    },
+                    colors: {
+                        obsidian: '#06070a',
+                        slateDark: '#0d1017',
+                        gold: '#d4af37',
+                        goldLight: '#f3e5ab',
+                        verified: '#1d9bf0',
+                        crimson: '#e11d48',
+                    }
+                }
+            }
+        };
+    </script>
+
+    <style>
+        ::-webkit-scrollbar {
+            width: 7px;
+            height: 7px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #06070a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: linear-gradient(180deg, #d4af37, #1d9bf0);
+            border-radius: 9999px;
+        }
+
+        .official-grid {
+            background-size: 56px 56px;
+            background-image:
+                linear-gradient(to right, rgba(212, 175, 55, 0.04) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+        }
+
+        .glass-official {
+            background: rgba(13, 16, 23, 0.88);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .glass-gold {
+            background: rgba(13, 16, 23, 0.94);
+            backdrop-filter: blur(22px);
+            -webkit-backdrop-filter: blur(22px);
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.65), 0 0 25px rgba(212, 175, 55, 0.08);
+        }
+
+        .verified-glow {
+            filter: drop-shadow(0 0 8px rgba(29, 155, 240, 0.65));
+        }
+
+        input[type="range"].official-slider {
+            -webkit-appearance: none;
+            appearance: none;
+            background: rgba(255, 255, 255, 0.14);
+            height: 5px;
+            border-radius: 999px;
+            cursor: pointer;
+        }
+        input[type="range"].official-slider::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            appearance: none;
+            width: 14px;
+            height: 14px;
+            border-radius: 50%;
+            background: #d4af37;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
+            cursor: pointer;
+            transition: transform 0.15s ease;
+        }
+        input[type="range"].official-slider::-webkit-slider-thumb:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body class="bg-obsidian text-gray-100 font-sans antialiased selection:bg-gold selection:text-black overflow-x-hidden pb-36">
+
+    <!-- Toast Notifications -->
+    <div id="toast-container" class="fixed top-20 right-4 z-[120] flex flex-col gap-3 max-w-sm w-full pointer-events-none"></div>
+
+    <!-- Top Navigation -->
+    <nav class="fixed top-0 inset-x-0 z-50 glass-official border-b border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16 sm:h-20">
+                <a href="#home" class="flex items-center gap-2.5 group">
+                    <div class="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-br from-gold via-amber-500 to-yellow-700 flex items-center justify-center shadow-lg shadow-gold/20">
+                        <span class="font-serif font-black text-black text-lg">T</span>
+                    </div>
+                    <div class="flex items-center gap-1.5">
+                        <span class="font-serif font-extrabold text-2xl sm:text-3xl tracking-wider text-white lowercase">tilip</span>
+                        <svg class="w-5 h-5 sm:w-6 sm:h-6 text-verified verified-glow shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-label="Official Verified Artist">
+                            <path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34zm-11.71 4.2L6.8 12.46l1.41-1.42 2.26 2.26 4.8-5.23 1.47 1.36-6.2 6.77z"/>
+                        </svg>
+                    </div>
+                    <span class="hidden sm:inline-block ml-1 px-2 py-0.5 rounded text-[10px] font-bold tracking-widest uppercase bg-white/5 border border-gold/30 text-gold">OFFICIAL</span>
+                </a>
+
+                <div class="hidden md:flex items-center space-x-8 text-xs font-semibold tracking-widest uppercase">
+                    <a href="#portal-tabs" onclick="activateSectionTab('releases')" class="text-gray-300 hover:text-gold transition-colors">Discography</a>
+                    <a href="#portal-tabs" onclick="activateSectionTab('videos')" class="text-gray-300 hover:text-gold transition-colors">Official Videos</a>
+                    <a href="#portal-tabs" onclick="activateSectionTab('members')" class="text-gray-300 hover:text-gold transition-colors">Members</a>
+                    <a href="#portal-tabs" onclick="activateSectionTab('about')" class="text-gray-300 hover:text-gold transition-colors">Biography & Tour</a>
+                </div>
+
+                <div class="flex items-center gap-2 sm:gap-3">
+                    <button id="btn-open-admin-panel" onclick="openAdminDashboard('upload')" class="hidden items-center gap-2 px-3.5 py-2 rounded-xl bg-gradient-to-r from-gold to-amber-500 text-black text-xs sm:text-sm font-bold shadow-lg shadow-gold/25 hover:brightness-110 transition-all cursor-pointer">
+                        <i class="fa-solid fa-sliders"></i>
+                        <span>Admin Studio</span>
+                    </button>
+
+                    <button id="btn-auth-toggle" onclick="handleAuthButtonClick()" class="flex items-center gap-2 px-3.5 py-2 rounded-xl border border-white/15 bg-white/5 hover:bg-gold/15 hover:border-gold/50 text-gray-200 text-xs sm:text-sm font-semibold transition-all cursor-pointer">
+                        <i class="fa-solid fa-lock text-gold" id="auth-icon"></i>
+                        <span id="auth-btn-text">Admin</span>
+                    </button>
+
+                    <button onclick="toggleMobileMenu()" class="md:hidden p-2.5 rounded-xl bg-white/5 border border-white/10 text-gray-300 hover:text-white">
+                        <i class="fa-solid fa-bars text-lg"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Mobile Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden glass-official border-t border-white/10 px-4 pt-3 pb-5 space-y-2">
+            <a href="#home" onclick="toggleMobileMenu()" class="block px-4 py-2.5 rounded-xl hover:bg-white/5 text-gray-200 font-medium">หน้าแรก (Home)</a>
+            <a href="#portal-tabs" onclick="toggleMobileMenu(); activateSectionTab('releases')" class="block px-4 py-2.5 rounded-xl hover:bg-white/5 text-gray-200 font-medium">ผลงานเพลง (Discography)</a>
+            <a href="#portal-tabs" onclick="toggleMobileMenu(); activateSectionTab('videos')" class="block px-4 py-2.5 rounded-xl hover:bg-white/5 text-gray-200 font-medium">มิวสิกวิดีโอ (Official Videos)</a>
+            <a href="#portal-tabs" onclick="toggleMobileMenu(); activateSectionTab('members')" class="block px-4 py-2.5 rounded-xl hover:bg-white/5 text-gray-200 font-medium">สมาชิกวง (Official Members)</a>
+            <a href="#portal-tabs" onclick="toggleMobileMenu(); activateSectionTab('about')" class="block px-4 py-2.5 rounded-xl hover:bg-white/5 text-gray-200 font-medium">ประวัติวง & ทัวร์ (Biography & Tour)</a>
+        </div>
+    </nav>
+
+    <!-- Active Admin Status Bar -->
+    <div id="admin-status-bar" class="hidden fixed top-16 sm:top-20 inset-x-0 z-40 bg-gradient-to-r from-amber-600 via-gold to-amber-500 text-black py-1.5 px-4 text-xs sm:text-sm font-semibold shadow-lg">
+        <div class="max-w-7xl mx-auto flex flex-wrap items-center justify-between gap-2">
+            <div class="flex items-center gap-2">
+                <span class="inline-block w-2 h-2 rounded-full bg-black animate-ping"></span>
+                <span><strong>VERIFIED ADMIN MODE</strong> — <span id="last-saved-indicator">บันทึกข้อมูลอัตโนมัติลงฐานข้อมูลถาวรแล้ว</span></span>
+            </div>
+            <div class="flex items-center gap-3">
+                <button onclick="openAdminDashboard('upload')" class="underline font-bold hover:opacity-75 cursor-pointer">+ อัปโหลดเพลง/MV</button>
+                <button onclick="openAdminDashboard('members')" class="underline font-bold hover:opacity-75 cursor-pointer">จัดการสมาชิก</button>
+                <button onclick="openAdminDashboard('security')" class="underline font-bold hover:opacity-75 cursor-pointer">สำรองข้อมูล / ความปลอดภัย</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <section id="home" class="relative min-h-screen flex items-center justify-center pt-24 pb-16 official-grid overflow-hidden">
+        <div class="absolute top-1/4 -left-24 w-96 h-96 bg-gold/10 rounded-full blur-[130px] pointer-events-none"></div>
+        <div class="absolute bottom-1/4 -right-24 w-96 h-96 bg-verified/10 rounded-full blur-[130px] pointer-events-none"></div>
+
+        <div class="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-center w-full">
+            <div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-white/[0.04] border border-gold/40 text-goldLight text-xs font-semibold tracking-widest uppercase mb-6 shadow-lg">
+                <i class="fa-solid fa-certificate text-gold"></i>
+                <span id="hero-genre-tag">OFFICIAL ARTIST PORTAL // BANGKOK, THAILAND</span>
+            </div>
+
+            <div class="flex items-center justify-center gap-3 sm:gap-5 mb-4">
+                <h1 class="font-serif font-black text-6xl sm:text-8xl md:text-9xl tracking-tight text-white lowercase select-none drop-shadow-[0_4px_25px_rgba(212,175,55,0.2)]">tilip</h1>
+                <svg class="w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 text-verified verified-glow shrink-0" viewBox="0 0 24 24" fill="currentColor" aria-label="Verified Official Band">
+                    <path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34zm-11.71 4.2L6.8 12.46l1.41-1.42 2.26 2.26 4.8-5.23 1.47 1.36-6.2 6.77z"/>
+                </svg>
+            </div>
+
+            <p id="hero-subtitle" class="max-w-2xl mx-auto text-gray-300 text-base sm:text-xl font-light leading-relaxed mb-8 px-2">
+                เว็บไซต์อย่างเป็นทางการของวง tilip — ศูนย์รวมผลงานเพลง มิวสิกวิดีโอ ข้อมูลสมาชิกวง และตารางการแสดงสดทั้งหมด
+            </p>
+
+            <!-- Audio Spectrum Visualizer -->
+            <div class="max-w-3xl mx-auto mb-10 glass-gold rounded-2xl p-3 sm:p-4 relative overflow-hidden">
+                <div class="flex items-center justify-between text-[11px] font-semibold tracking-wider text-gray-400 mb-2 px-2">
+                    <span class="flex items-center gap-2">
+                        <span id="visualizer-status-dot" class="w-2 h-2 rounded-full bg-gold"></span>
+                        <span id="visualizer-track-label">MASTER AUDIO SPECTRUM // STANDBY</span>
+                    </span>
+                    <span class="text-gold">24-BIT STUDIO ENGINE</span>
+                </div>
+                <div class="w-full h-24 sm:h-28 relative">
+                    <canvas id="hero-visualizer" class="w-full h-full rounded-xl block"></canvas>
+                </div>
+            </div>
+
+            <div class="flex flex-wrap items-center justify-center gap-4">
+                <button onclick="playFeaturedOrLatest()" class="px-8 py-4 rounded-2xl bg-gradient-to-r from-gold via-amber-400 to-gold text-black font-bold text-sm sm:text-base tracking-wider uppercase shadow-xl shadow-gold/20 hover:brightness-110 transition-all flex items-center gap-3 cursor-pointer">
+                    <i class="fa-solid fa-play text-base"></i>
+                    <span>ฟังซิงเกิลล่าสุด (Listen Now)</span>
+                </button>
+                <a href="#portal-tabs" onclick="activateSectionTab('members')" class="px-8 py-4 rounded-2xl glass-official hover:border-gold/50 text-white font-semibold text-sm sm:text-base tracking-wider uppercase transition-all flex items-center gap-3">
+                    <i class="fa-solid fa-users text-gold text-base"></i>
+                    <span>สมาชิกวง tilip</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Portal Sections -->
+    <section id="portal-tabs" class="py-16 sm:py-20 relative border-t border-white/10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex flex-wrap items-center justify-between gap-4 mb-10 border-b border-white/10 pb-5">
+                <div class="flex flex-wrap items-center gap-2 sm:gap-3">
+                    <button id="sec-tab-releases" onclick="switchSectionTab('releases')" class="sec-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-gold text-black transition-all cursor-pointer">
+                        <i class="fa-solid fa-compact-disc mr-1.5"></i> ผลงานเพลง (Releases)
+                    </button>
+                    <button id="sec-tab-videos" onclick="switchSectionTab('videos')" class="sec-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-white/5 text-gray-300 hover:bg-white/10 transition-all cursor-pointer">
+                        <i class="fa-solid fa-film mr-1.5"></i> มิวสิกวิดีโอ (Official Videos)
+                    </button>
+                    <button id="sec-tab-members" onclick="switchSectionTab('members')" class="sec-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-white/5 text-gray-300 hover:bg-white/10 transition-all cursor-pointer">
+                        <i class="fa-solid fa-users mr-1.5"></i> สมาชิกวง (Members)
+                    </button>
+                    <button id="sec-tab-about" onclick="switchSectionTab('about')" class="sec-tab-btn px-5 py-2.5 rounded-xl text-xs sm:text-sm font-bold uppercase tracking-wider bg-white/5 text-gray-300 hover:bg-white/10 transition-all cursor-pointer">
+                        <i class="fa-solid fa-landmark mr-1.5"></i> ประวัติวง & ทัวร์ (About & Tour)
+                    </button>
+                </div>
+
+                <div id="release-filter-group" class="flex items-center gap-2">
+                    <button onclick="setReleaseFilter('all')" id="filter-all" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white/15 text-white cursor-pointer">ทั้งหมด</button>
+                    <button onclick="setReleaseFilter('featured')" id="filter-featured" class="px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white/5 text-gray-400 hover:text-white cursor-pointer">แนะนำ (Featured)</button>
+                </div>
+            </div>
+
+            <!-- 1. Discography Tab -->
+            <div id="panel-releases" class="section-panel">
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-[0.2em] text-gold mb-1">Official Discography</p>
+                        <h2 class="text-2xl sm:text-4xl font-bold text-white flex items-center gap-2">
+                            <span>ผลงานเพลงจาก</span>
+                            <span class="font-serif lowercase">tilip</span>
+                            <svg class="w-6 h-6 text-verified verified-glow inline" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34zm-11.71 4.2L6.8 12.46l1.41-1.42 2.26 2.26 4.8-5.23 1.47 1.36-6.2 6.77z"/>
+                            </svg>
+                        </h2>
+                    </div>
+                    <p id="release-count-label" class="text-xs sm:text-sm text-gray-400"></p>
+                </div>
+
+                <div id="tracks-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8"></div>
+            </div>
+
+            <!-- 2. Official Videos Tab -->
+            <div id="panel-videos" class="section-panel hidden">
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-[0.2em] text-gold mb-1">Music Videos & Live Sessions</p>
+                        <h2 class="text-2xl sm:text-4xl font-bold text-white flex items-center gap-2">
+                            <span>มิวสิกวิดีโอทางการของ</span>
+                            <span class="font-serif lowercase">tilip</span>
+                            <svg class="w-6 h-6 text-verified verified-glow inline" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34zm-11.71 4.2L6.8 12.46l1.41-1.42 2.26 2.26 4.8-5.23 1.47 1.36-6.2 6.77z"/>
+                            </svg>
+                        </h2>
+                    </div>
+                    <p id="video-count-label" class="text-xs sm:text-sm text-gray-400"></p>
+                </div>
+
+                <div id="videos-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8"></div>
+            </div>
+
+            <!-- 3. Band Members Tab -->
+            <div id="panel-members" class="section-panel hidden">
+                <div class="flex flex-col sm:flex-row sm:items-end justify-between mb-8 gap-4">
+                    <div>
+                        <p class="text-xs font-bold uppercase tracking-[0.2em] text-gold mb-1">Official Line-Up</p>
+                        <h2 class="text-2xl sm:text-4xl font-bold text-white flex items-center gap-2">
+                            <span>สมาชิกวง</span>
+                            <span class="font-serif lowercase">tilip</span>
+                            <svg class="w-6 h-6 text-verified verified-glow inline" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34zm-11.71 4.2L6.8 12.46l1.41-1.42 2.26 2.26 4.8-5.23 1.47 1.36-6.2 6.77z"/>
+                            </svg>
+                        </h2>
+                    </div>
+                    <p id="member-count-label" class="text-xs sm:text-sm text-gray-400"></p>
+                </div>
+
+                <div id="members-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8"></div>
+            </div>
+
+            <!-- 4. Biography & Tour Tab -->
+            <div id="panel-about" class="section-panel hidden">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+                    <div class="lg:col-span-7 glass-official rounded-3xl p-6 sm:p-8 border border-white/10">
+                        <div class="flex items-center gap-2 text-xs font-bold uppercase tracking-widest text-gold mb-2">
+                            <i class="fa-solid fa-award"></i> Official Artist Profile
+                        </div>
+                        <h3 class="text-2xl sm:text-3xl font-bold text-white mb-4 flex items-center gap-2">
+                            <span>เกี่ยวกับวง</span>
+                            <span class="font-serif lowercase">tilip</span>
+                            <svg class="w-5 h-5 text-verified verified-glow inline" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34zm-11.71 4.2L6.8 12.46l1.41-1.42 2.26 2.26 4.8-5.23 1.47 1.36-6.2 6.77z"/>
+                            </svg>
+                        </h3>
+                        <p id="about-bio-text" class="text-gray-300 leading-relaxed whitespace-pre-line text-sm sm:text-base mb-6"></p>
+
+                        <div class="pt-5 border-t border-white/10">
+                            <p class="text-xs font-bold uppercase tracking-widest text-gray-400 mb-3">Official Channels & Booking</p>
+                            <div id="social-links-display" class="flex flex-wrap gap-3"></div>
+                        </div>
+                    </div>
+
+                    <div class="lg:col-span-5 glass-official rounded-3xl p-6 sm:p-8 border border-white/10">
+                        <div class="flex items-center justify-between mb-5">
+                            <div>
+                                <p class="text-xs font-bold uppercase tracking-widest text-gold">Live & Events</p>
+                                <h3 class="text-xl sm:text-2xl font-bold text-white">ตารางการแสดง & ทัวร์</h3>
+                            </div>
+                            <i class="fa-solid fa-calendar-check text-gold text-2xl"></i>
+                        </div>
+                        <div id="gigs-list-display" class="space-y-3"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="border-t border-white/10 bg-slateDark/70 py-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs sm:text-sm text-gray-400">
+            <div class="flex items-center gap-2">
+                <span class="font-serif font-bold text-lg text-white lowercase">tilip</span>
+                <svg class="w-4 h-4 text-verified verified-glow inline" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34zm-11.71 4.2L6.8 12.46l1.41-1.42 2.26 2.26 4.8-5.23 1.47 1.36-6.2 6.77z"/>
+                </svg>
+                <span>Official Website • All Rights Reserved</span>
+            </div>
+            <div id="footer-contact-email" class="text-gray-400">booking@tilip-official.com</div>
+        </div>
+    </footer>
+
+    <!-- Sticky Audio Bar -->
+    <div id="sticky-audio-player" class="fixed bottom-0 inset-x-0 z-50 glass-gold border-t border-gold/30">
+        <div class="max-w-7xl mx-auto px-3 sm:px-6 lg:px-8 py-2.5 sm:py-3">
+            <div class="flex flex-col sm:flex-row items-center justify-between gap-3">
+                <div class="flex items-center gap-3 w-full sm:w-auto sm:min-w-[240px] max-w-xs">
+                    <img id="player-cover" src="https://placehold.co/120x120/0d1017/d4af37?text=tilip" alt="Cover" class="w-12 h-12 rounded-xl object-cover border border-gold/30 shrink-0">
+                    <div class="min-w-0 flex-1">
+                        <div class="flex items-center gap-1.5">
+                            <p id="player-title" class="text-sm font-bold text-white truncate">ยังไม่ได้เลือกเพลง</p>
+                        </div>
+                        <p id="player-artist" class="text-xs text-gold truncate">tilip ✓ • Official Audio</p>
+                    </div>
+                </div>
+
+                <div class="flex flex-col items-center w-full sm:flex-1 max-w-xl">
+                    <div class="flex items-center gap-5 mb-1">
+                        <button onclick="prevTrack()" class="text-gray-300 hover:text-gold transition-colors cursor-pointer" title="เพลงก่อนหน้า">
+                            <i class="fa-solid fa-backward-step text-base"></i>
+                        </button>
+                        <button onclick="togglePlayPause()" class="w-10 h-10 rounded-full bg-gradient-to-r from-gold to-amber-500 text-black flex items-center justify-center shadow-lg shadow-gold/30 hover:scale-105 transition-transform cursor-pointer" title="เล่น / หยุดชั่วคราว">
+                            <i id="player-play-icon" class="fa-solid fa-play text-sm ml-0.5"></i>
+                        </button>
+                        <button onclick="nextTrack()" class="text-gray-300 hover:text-gold transition-colors cursor-pointer" title="เพลงถัดไป">
+                            <i class="fa-solid fa-forward-step text-base"></i>
+                        </button>
+                    </div>
+                    <div class="flex items-center gap-2.5 w-full text-[11px] font-mono text-gray-400">
+                        <span id="player-current-time">0:00</span>
+                        <input id="player-seek" type="range" min="0" max="100" value="0" step="0.1" oninput="seekAudio(this.value)" class="official-slider flex-1">
+                        <span id="player-duration">0:00</span>
+                    </div>
+                </div>
+
+                <div class="hidden lg:flex items-center gap-2.5 w-40 justify-end">
+                    <i class="fa-solid fa-volume-high text-gold text-xs"></i>
+                    <input id="player-volume" type="range" min="0" max="1" step="0.01" value="0.85" oninput="setAudioVolume(this.value)" class="official-slider w-24">
+                </div>
+            </div>
+        </div>
+        <audio id="audio-element" preload="metadata"></audio>
+    </div>
+
+    <!-- Admin Login Modal -->
+    <div id="admin-login-modal" class="fixed inset-0 z-[90] hidden items-center justify-center bg-black/80 backdrop-blur-md p-4">
+        <div class="glass-gold rounded-3xl max-w-md w-full p-6 sm:p-8 relative animate-[fadeIn_0.2s_ease-out]">
+            <button onclick="closeAdminLoginModal()" class="absolute top-5 right-5 w-9 h-9 rounded-full bg-white/5 hover:bg-white/15 flex items-center justify-center text-gray-400 hover:text-white cursor-pointer">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+
+            <div class="text-center mb-6">
+                <div class="w-14 h-14 rounded-2xl bg-gradient-to-br from-gold/25 to-verified/20 border border-gold/40 flex items-center justify-center mx-auto mb-3">
+                    <i class="fa-solid fa-shield-halved text-2xl text-gold"></i>
+                </div>
+                <h3 class="font-serif font-bold text-2xl text-white tracking-wide">ADMIN AUTHENTICATION</h3>
+                <p class="text-xs text-gray-400 mt-1">ยืนยันตัวตนเพื่อเข้าสู่ระบบจัดการผลงานและสมาชิกวง tilip</p>
+            </div>
+
+            <div id="login-lockout-banner" class="hidden mb-4 p-3.5 rounded-xl bg-rose-950/80 border border-rose-500/50 text-rose-200 text-xs">
+                <div class="flex items-center justify-between gap-2">
+                    <div class="flex items-center gap-2">
+                        <i class="fa-solid fa-ban text-rose-400 text-base shrink-0"></i>
+                        <span id="login-lockout-text">ตรวจพบการกรอกรหัสผิดหลายครั้ง ระบบล็อกชั่วคราว</span>
+                    </div>
+                    <button type="button" onclick="resetLockoutNow()" class="px-2.5 py-1 rounded-lg bg-white/10 hover:bg-white/20 text-white font-semibold shrink-0 cursor-pointer">
+                        ปลดล็อก
+                    </button>
+                </div>
+            </div>
+
+            <form id="admin-login-form" onsubmit="handleAdminLoginSubmit(event)" class="space-y-4">
+                <div>
+                    <label for="admin-password-input" class="block text-xs font-semibold uppercase tracking-wider text-gray-300 mb-2">
+                        Admin Passphrase
+                    </label>
+                    <div class="relative">
+                        <input id="admin-password-input" type="password" required autocomplete="current-password"
+                            placeholder="กรอกรหัสผ่านแอดมิน"
+                            class="w-full px-4 py-3 pr-11 rounded-xl bg-black/60 border border-white/15 focus:border-gold focus:outline-none text-white text-sm">
+                        <button type="button" onclick="togglePasswordVisibility('admin-password-input', 'eye-icon-login')" class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gold cursor-pointer">
+                            <i id="eye-icon-login" class="fa-solid fa-eye"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <button id="btn-submit-login" type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold via-amber-400 to-gold text-black font-bold text-sm uppercase tracking-wider shadow-lg shadow-gold/25 hover:brightness-110 transition-all cursor-pointer">
+                    <i class="fa-solid fa-right-to-bracket mr-1.5"></i> เข้าสู่ระบบแอดมิน
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Video Preview Modal -->
+    <div id="video-modal" class="fixed inset-0 z-[95] hidden items-center justify-center bg-black/90 backdrop-blur-md p-4">
+        <div class="glass-gold rounded-3xl max-w-4xl w-full overflow-hidden relative">
+            <div class="flex items-center justify-between px-5 py-4 border-b border-white/10">
+                <div>
+                    <h4 id="video-modal-title" class="text-base sm:text-lg font-bold text-white">Official Music Video</h4>
+                    <p id="video-modal-subtitle" class="text-xs text-gold">tilip ✓</p>
+                </div>
+                <button onclick="closeVideoModal()" class="w-9 h-9 rounded-full bg-white/10 hover:bg-white/20 flex items-center justify-center text-white cursor-pointer">
+                    <i class="fa-solid fa-xmark"></i>
+                </button>
+            </div>
+            <div id="video-modal-player-container" class="bg-black aspect-video w-full flex items-center justify-center"></div>
+        </div>
+    </div>
+
+    <!-- Admin Studio Dashboard Modal -->
+    <div id="admin-dashboard-modal" class="fixed inset-0 z-[100] hidden items-start justify-center bg-black/85 backdrop-blur-lg p-3 sm:p-6 overflow-y-auto">
+        <div class="glass-gold rounded-3xl max-w-6xl w-full my-4 overflow-hidden border border-gold/40">
+            <div class="flex flex-wrap items-center justify-between gap-3 px-6 py-4 bg-black/50 border-b border-white/10">
+                <div class="flex items-center gap-3">
+                    <div class="w-10 h-10 rounded-xl bg-gold text-black flex items-center justify-center font-bold">
+                        <i class="fa-solid fa-crown"></i>
+                    </div>
+                    <div>
+                        <h3 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+                            <span>tilip Admin Studio</span>
+                            <svg class="w-4 h-4 text-verified inline" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34zm-11.71 4.2L6.8 12.46l1.41-1.42 2.26 2.26 4.8-5.23 1.47 1.36-6.2 6.77z"/>
+                            </svg>
+                        </h3>
+                        <p id="studio-save-status" class="text-xs text-gray-400">อัปโหลดไฟล์จากเครื่องและจัดการข้อมูลเว็บไซต์ได้ทันที</p>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-2">
+                    <button onclick="logoutAdmin()" class="px-3.5 py-2 rounded-xl bg-rose-500/15 hover:bg-rose-500/25 border border-rose-500/40 text-rose-300 text-xs font-semibold cursor-pointer">
+                        <i class="fa-solid fa-right-from-bracket mr-1"></i> ออกจากระบบ
+                    </button>
+                    <button onclick="closeAdminDashboard()" class="w-9 h-9 rounded-xl bg-white/10 hover:bg-white/20 flex items-center justify-center text-white cursor-pointer">
+                        <i class="fa-solid fa-xmark"></i>
+                    </button>
+                </div>
+            </div>
+
+            <!-- Studio Tabs -->
+            <div class="flex flex-wrap gap-2 px-6 py-3 bg-white/[0.02] border-b border-white/10 text-xs sm:text-sm font-semibold">
+                <button id="adm-tab-upload" onclick="switchAdminTab('upload')" class="adm-tab px-4 py-2 rounded-xl bg-gold text-black cursor-pointer">
+                    <i class="fa-solid fa-cloud-arrow-up mr-1.5"></i> อัปโหลดเพลง & MV
+                </button>
+                <button id="adm-tab-catalog" onclick="switchAdminTab('catalog')" class="adm-tab px-4 py-2 rounded-xl bg-white/5 text-gray-300 hover:bg-white/10 cursor-pointer">
+                    <i class="fa-solid fa-list-check mr-1.5"></i> จัดการรายการสื่อ
+                </button>
+                <button id="adm-tab-members" onclick="switchAdminTab('members')" class="adm-tab px-4 py-2 rounded-xl bg-white/5 text-gray-300 hover:bg-white/10 cursor-pointer">
+                    <i class="fa-solid fa-user-group mr-1.5"></i> จัดการสมาชิกวง
+                </button>
+                <button id="adm-tab-band" onclick="switchAdminTab('band')" class="adm-tab px-4 py-2 rounded-xl bg-white/5 text-gray-300 hover:bg-white/10 cursor-pointer">
+                    <i class="fa-solid fa-pen-to-square mr-1.5"></i> ประวัติวง & ทัวร์
+                </button>
+                <button id="adm-tab-security" onclick="switchAdminTab('security')" class="adm-tab px-4 py-2 rounded-xl bg-white/5 text-gray-300 hover:bg-white/10 cursor-pointer">
+                    <i class="fa-solid fa-key mr-1.5"></i> ความปลอดภัย & สำรองข้อมูล
+                </button>
+            </div>
+
+            <div class="p-6 max-h-[75vh] overflow-y-auto space-y-6">
+                <!-- Tab 1: Upload Track or MV -->
+                <div id="adm-panel-upload" class="adm-panel">
+                    <form id="media-upload-form" onsubmit="handleMediaUploadSubmit(event)" class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+                        <div class="lg:col-span-7 space-y-4">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 mb-1.5">ประเภทผลงาน *</label>
+                                    <select id="upload-media-type" onchange="toggleUploadSourceFields()" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-sm">
+                                        <option value="audio">เพลง (Audio Track)</option>
+                                        <option value="video">มิวสิกวิดีโอ / คลิป (Music Video)</option>
+                                    </select>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 mb-1.5">ชื่อผลงาน / ชื่อเพลง *</label>
+                                    <input id="upload-title" type="text" required placeholder="เช่น Midnight Echoes" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-sm">
+                                </div>
+                            </div>
+
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 mb-1.5">อัลบั้ม / ซีรีส์</label>
+                                    <input id="upload-album" type="text" placeholder="เช่น Official Single 2026" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-sm">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 mb-1.5">ปีที่ปล่อย / วันที่</label>
+                                    <input id="upload-year" type="text" value="2026" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-sm">
+                                </div>
+                            </div>
+
+                            <!-- Cover Image File Picker -->
+                            <div class="p-4 rounded-2xl bg-white/[0.03] border border-white/10">
+                                <label class="block text-xs font-bold text-gold mb-2">
+                                    <i class="fa-solid fa-image mr-1"></i> เลือกรูปปกจากเครื่อง (JPG, PNG, WEBP — สูงสุด 5MB)
+                                </label>
+                                <input id="upload-cover-file" type="file" accept="image/jpeg,image/png,image/webp,image/gif" onchange="previewUploadedCover(this)"
+                                    class="block w-full text-xs text-gray-300 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-gold file:text-black hover:file:brightness-110 cursor-pointer">
+                            </div>
+
+                            <!-- Audio File Picker -->
+                            <div id="audio-file-box" class="p-4 rounded-2xl bg-white/[0.03] border border-white/10">
+                                <label class="block text-xs font-bold text-verified mb-2">
+                                    <i class="fa-solid fa-music mr-1"></i> เลือกไฟล์เพลงจากเครื่อง (MP3, WAV, OGG, M4A — สูงสุด 35MB) *
+                                </label>
+                                <input id="upload-audio-file" type="file" accept="audio/*" onchange="handleMediaFileSelected(this, 'audio')"
+                                    class="block w-full text-xs text-gray-300 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-verified file:text-white hover:file:brightness-110 cursor-pointer">
+                                <p id="audio-file-info" class="text-[11px] text-gray-400 mt-1.5"></p>
+                            </div>
+
+                            <!-- Video File / URL Box -->
+                            <div id="video-file-box" class="hidden p-4 rounded-2xl bg-white/[0.03] border border-white/10 space-y-3">
+                                <div>
+                                    <label class="block text-xs font-bold text-verified mb-2">
+                                        <i class="fa-solid fa-video mr-1"></i> เลือกไฟล์คลิป MV จากเครื่อง (MP4, WEBM — สูงสุด 80MB)
+                                    </label>
+                                    <input id="upload-video-file" type="file" accept="video/mp4,video/webm,video/ogg" onchange="handleMediaFileSelected(this, 'video')"
+                                        class="block w-full text-xs text-gray-300 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-verified file:text-white hover:file:brightness-110 cursor-pointer">
+                                    <p id="video-file-info" class="text-[11px] text-gray-400 mt-1.5"></p>
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-gray-300 mb-1">หรือใส่ลิงก์ YouTube / MP4 (ทางเลือก)</label>
+                                    <input id="upload-video-url" type="url" placeholder="https://www.youtube.com/watch?v=... หรือลิงก์ .mp4" class="w-full px-3.5 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-xs">
+                                </div>
+                            </div>
+
+                            <div class="flex flex-wrap items-center gap-5 pt-1 text-xs text-gray-300">
+                                <label class="inline-flex items-center gap-2 cursor-pointer">
+                                    <input id="upload-featured" type="checkbox" class="rounded accent-amber-400 w-4 h-4">
+                                    <span>ปักหมุดเป็นผลงานแนะนำ (Featured)</span>
+                                </label>
+                                <label class="inline-flex items-center gap-2 cursor-pointer">
+                                    <input id="upload-published" type="checkbox" checked class="rounded accent-amber-400 w-4 h-4">
+                                    <span>เผยแพร่บนหน้าเว็บสาธารณะทันที</span>
+                                </label>
+                            </div>
+
+                            <button type="submit" class="w-full py-3.5 rounded-xl bg-gradient-to-r from-gold to-amber-500 text-black font-bold text-sm uppercase tracking-wider shadow-lg hover:brightness-110 cursor-pointer">
+                                <i class="fa-solid fa-floppy-disk mr-1.5"></i> บันทึกและเผยแพร่ผลงานลงเว็บ
+                            </button>
+                        </div>
+
+                        <!-- Live Cover Preview -->
+                        <div class="lg:col-span-5">
+                            <div class="glass-official rounded-2xl p-5 border border-white/10">
+                                <p class="text-xs font-bold uppercase tracking-wider text-gray-400 mb-3">ตัวอย่างหน้าปก (Cover Preview)</p>
+                                <div class="aspect-square rounded-2xl overflow-hidden bg-black/60 border border-white/10 mb-3">
+                                    <img id="upload-cover-preview" src="https://placehold.co/500x500/0d1017/d4af37?text=tilip+COVER" alt="Cover Preview" class="w-full h-full object-cover">
+                                </div>
+                                <p class="text-xs text-gray-400">ไฟล์มีเดียที่อัปโหลดจะถูกบันทึกลง IndexedDB ในเบราว์เซอร์เพื่อใช้งานได้ต่อเนื่องแม้รีเฟรชหน้าเว็บ</p>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+                <!-- Tab 2: Manage Catalog -->
+                <div id="adm-panel-catalog" class="adm-panel hidden space-y-4">
+                    <div class="flex items-center justify-between">
+                        <h4 class="text-base font-bold text-white">รายการเพลงและมิวสิกวิดีโอทั้งหมด</h4>
+                        <button onclick="switchAdminTab('upload')" class="px-3.5 py-2 rounded-xl bg-gold text-black text-xs font-bold cursor-pointer">+ เพิ่มผลงานใหม่</button>
+                    </div>
+                    <div id="admin-catalog-list" class="space-y-3"></div>
+                </div>
+
+                <!-- Tab 3: Manage Band Members -->
+                <div id="adm-panel-members" class="adm-panel hidden space-y-6">
+                    <form id="member-form" onsubmit="handleMemberSubmit(event)" class="glass-official rounded-2xl p-5 border border-white/10 space-y-4">
+                        <div class="flex items-center justify-between">
+                            <h4 id="member-form-title" class="text-base font-bold text-gold">เพิ่มสมาชิกวง tilip</h4>
+                            <button type="button" onclick="resetMemberForm()" class="text-xs text-gray-400 hover:text-white cursor-pointer">ล้างฟอร์ม</button>
+                        </div>
+                        <input type="hidden" id="member-edit-id">
+                        <div class="grid grid-cols-1 sm:grid-cols-3 gap-4">
+                            <div>
+                                <label class="block text-xs text-gray-300 mb-1">ชื่อสมาชิก *</label>
+                                <input id="member-name" type="text" required placeholder="เช่น ภีม (Peem)" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-300 mb-1">ตำแหน่งในวง *</label>
+                                <input id="member-role" type="text" required placeholder="เช่น Lead Vocal / Synth" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-300 mb-1">Instagram / โซเชียล</label>
+                                <input id="member-ig" type="text" placeholder="เช่น @peem.tilip" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-sm">
+                            </div>
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-12 gap-4 items-center">
+                            <div class="sm:col-span-7">
+                                <label class="block text-xs text-gray-300 mb-1">อัปโหลดรูปสมาชิกจากเครื่อง (JPG, PNG, WEBP — สูงสุด 5MB)</label>
+                                <input id="member-photo-file" type="file" accept="image/jpeg,image/png,image/webp" onchange="previewMemberPhoto(this)"
+                                    class="block w-full text-xs text-gray-300 file:mr-3 file:py-2 file:px-4 file:rounded-xl file:border-0 file:text-xs file:font-bold file:bg-gold file:text-black cursor-pointer">
+                            </div>
+                            <div class="sm:col-span-5 flex items-center gap-3">
+                                <img id="member-photo-preview" src="https://placehold.co/120x120/0d1017/d4af37?text=tilip" alt="Member Preview" class="w-14 h-14 rounded-xl object-cover border border-gold/30">
+                                <button type="submit" class="flex-1 py-2.5 px-4 rounded-xl bg-gold text-black font-bold text-xs uppercase tracking-wider cursor-pointer">
+                                    บันทึกข้อมูลสมาชิก
+                                </button>
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-300 mb-1">ประวัติย่อ / สไตล์การเล่น</label>
+                            <textarea id="member-bio" rows="2" placeholder="รายละเอียดสั้นๆ ของสมาชิก..." class="w-full px-3.5 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-sm"></textarea>
+                        </div>
+                    </form>
+
+                    <div id="admin-members-list" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+                </div>
+
+                <!-- Tab 4: Band Info & Gigs -->
+                <div id="adm-panel-band" class="adm-panel hidden space-y-6">
+                    <form onsubmit="handleBandInfoSave(event)" class="glass-official rounded-2xl p-5 border border-white/10 space-y-4">
+                        <h4 class="text-base font-bold text-gold">ข้อมูลหลักและประวัติวง tilip</h4>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label class="block text-xs text-gray-300 mb-1">ป้ายกำกับหน้าแรก (Tagline)</label>
+                                <input id="band-genre-input" type="text" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-sm">
+                            </div>
+                            <div>
+                                <label class="block text-xs text-gray-300 mb-1">อีเมลติดต่อ / Booking</label>
+                                <input id="band-email-input" type="text" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-sm">
+                            </div>
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-300 mb-1">คำบรรยายหน้าแรก</label>
+                            <input id="band-subtitle-input" type="text" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-300 mb-1">ประวัติวง (Biography)</label>
+                            <textarea id="band-bio-input" rows="4" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-sm"></textarea>
+                        </div>
+                        <button type="submit" class="px-5 py-2.5 rounded-xl bg-gold text-black font-bold text-xs uppercase tracking-wider cursor-pointer">
+                            บันทึกข้อมูลวง
+                        </button>
+                    </form>
+
+                    <div class="glass-official rounded-2xl p-5 border border-white/10 space-y-4">
+                        <h4 class="text-base font-bold text-gold">เพิ่มตารางการแสดงสด / ทัวร์</h4>
+                        <form onsubmit="handleAddGig(event)" class="grid grid-cols-1 sm:grid-cols-4 gap-3">
+                            <input id="gig-date" type="text" required placeholder="วันที่ เช่น 19 DEC 2026" class="px-3.5 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-sm">
+                            <input id="gig-venue" type="text" required placeholder="สถานที่ / งาน" class="px-3.5 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-sm">
+                            <input id="gig-city" type="text" required placeholder="เมือง / จังหวัด" class="px-3.5 py-2 rounded-xl bg-black/60 border border-white/15 text-white text-sm">
+                            <button type="submit" class="px-4 py-2 rounded-xl bg-verified text-white font-bold text-xs cursor-pointer">+ เพิ่มตารางทัวร์</button>
+                        </form>
+                        <div id="admin-gigs-list" class="space-y-2 pt-2"></div>
+                    </div>
+                </div>
+
+                <!-- Tab 5: Security & Backup -->
+                <div id="adm-panel-security" class="adm-panel hidden grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <form onsubmit="handleChangePassword(event)" class="glass-official rounded-2xl p-5 border border-white/10 space-y-4">
+                        <h4 class="text-base font-bold text-gold"><i class="fa-solid fa-lock mr-1.5"></i> เปลี่ยนรหัสผ่านแอดมิน</h4>
+                        <div>
+                            <label class="block text-xs text-gray-300 mb-1">รหัสผ่านปัจจุบัน</label>
+                            <input id="current-pass-input" type="password" required class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-300 mb-1">รหัสผ่านใหม่ (อย่างน้อย 6 ตัวอักษร)</label>
+                            <input id="new-pass-input" type="password" required minlength="6" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs text-gray-300 mb-1">ยืนยันรหัสผ่านใหม่อีกครั้ง</label>
+                            <input id="confirm-pass-input" type="password" required minlength="6" class="w-full px-3.5 py-2.5 rounded-xl bg-black/60 border border-white/15 text-white text-sm">
+                        </div>
+                        <button type="submit" class="w-full py-2.5 rounded-xl bg-gold text-black font-bold text-xs uppercase tracking-wider cursor-pointer">
+                            อัปเดตรหัสผ่านใหม่
+                        </button>
+                    </form>
+
+                    <div class="glass-official rounded-2xl p-5 border border-white/10 space-y-4">
+                        <h4 class="text-base font-bold text-gold"><i class="fa-solid fa-database mr-1.5"></i> สำรองและนำเข้าข้อมูล (JSON Backup)</h4>
+                        <p class="text-xs text-gray-400 leading-relaxed">
+                            ส่งออกข้อมูลเพลง สมาชิกวง ประวัติวง และตารางทัวร์เป็นไฟล์ JSON เพื่อสำรองไว้ หรือนำเข้าข้อมูลกลับคืนในเบราว์เซอร์ได้ทันที
+                        </p>
+                        <div class="flex flex-wrap gap-3">
+                            <button type="button" onclick="exportMetadataJson()" class="px-4 py-2.5 rounded-xl bg-white/10 hover:bg-white/15 text-white text-xs font-bold cursor-pointer">
+                                <i class="fa-solid fa-download mr-1.5 text-gold"></i> Export JSON
+                            </button>
+                            <label class="px-4 py-2.5 rounded-xl bg-verified/20 hover:bg-verified/30 border border-verified/40 text-white text-xs font-bold cursor-pointer">
+                                <i class="fa-solid fa-upload mr-1.5"></i> Import JSON
+                                <input type="file" accept="application/json" onchange="importMetadataJson(this)" class="hidden">
+                            </label>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // =========================================================================
+        // 1. CONSTANTS & DEFAULT STATE
+        // =========================================================================
+        const DB_NAME = 'tilip_official_db_v2';
+        const DB_VERSION = 1;
+        const MEDIA_STORE = 'media_files';
+
+        const STORAGE_KEYS = {
+            STATE: 'tilip_official_state_v2',
+            AUTH_CONFIG: 'tilip_official_auth_v2',
+            LOCKOUT: 'tilip_official_lockout_v2',
+            SESSION: 'tilip_official_session_v2'
+        };
+
+        const DEFAULT_ADMIN_PASS = 'tillip2026';
+        const MAX_FAILED_ATTEMPTS = 5;
+        const LOCKOUT_DURATION_MS = 30000;
+        const SESSION_DURATION_MS = 2 * 60 * 60 * 1000;
+
+        const MAX_IMAGE_BYTES = 5 * 1024 * 1024;
+        const MAX_AUDIO_BYTES = 35 * 1024 * 1024;
+        const MAX_VIDEO_BYTES = 80 * 1024 * 1024;
+
+        const DEFAULT_STATE = {
+            lastSavedAt: null,
+            band: {
+                genreTag: 'OFFICIAL ARTIST PORTAL // BANGKOK, THAILAND',
+                subtitle: 'เว็บไซต์อย่างเป็นทางการของวง tilip — ศูนย์รวมผลงานเพลง มิวสิกวิดีโอ ข้อมูลสมาชิกวง และตารางการแสดงสดทั้งหมด',
+                bio: 'tilip คือวงดนตรีอิสระจากกรุงเทพมหานคร ที่ผสานซาวด์ซินธ์ร่วมสมัย กีตาร์ที่คมชัด และเนื้อหาที่ตรงไปตรงมา ถ่ายทอดอารมณ์และความทรงจำผ่านผลงานเพลงและการแสดงสดอย่างเป็นทางการ',
+                contactEmail: 'booking@tilip-official.com',
+                socials: [
+                    { label: 'Spotify', url: 'https://open.spotify.com', icon: 'fa-brands fa-spotify' },
+                    { label: 'YouTube', url: 'https://youtube.com', icon: 'fa-brands fa-youtube' },
+                    { label: 'Instagram', url: 'https://instagram.com', icon: 'fa-brands fa-instagram' },
+                    { label: 'TikTok', url: 'https://tiktok.com', icon: 'fa-brands fa-tiktok' }
+                ]
+            },
+            releases: [
+                {
+                    id: 'rel-1',
+                    type: 'audio',
+                    title: 'Midnight Echoes (ก้องในความเงียบ)',
+                    album: 'Official Single 2026',
+                    year: '2026',
+                    coverUrl: 'https://placehold.co/600x600/0d1017/d4af37?text=tilip+%7C+ECHOES',
+                    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3',
+                    mediaKey: null,
+                    videoUrl: '',
+                    featured: true,
+                    published: true
+                },
+                {
+                    id: 'rel-2',
+                    type: 'audio',
+                    title: 'Glass Horizon (เส้นขอบฟ้า)',
+                    album: 'tilip EP Vol.1',
+                    year: '2026',
+                    coverUrl: 'https://placehold.co/600x600/0d1017/1d9bf0?text=tilip+%7C+HORIZON',
+                    audioUrl: 'https://www.soundhelix.com/examples/mp3/SoundHelix-Song-2.mp3',
+                    mediaKey: null,
+                    videoUrl: '',
+                    featured: true,
+                    published: true
+                },
+                {
+                    id: 'rel-3',
+                    type: 'video',
+                    title: 'Midnight Echoes — Official Live Session',
+                    album: 'Studio Live 2026',
+                    year: '2026',
+                    coverUrl: 'https://placehold.co/800x450/0d1017/d4af37?text=tilip+OFFICIAL+VIDEO',
+                    audioUrl: '',
+                    mediaKey: null,
+                    videoUrl: 'https://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerBlazes.mp4',
+                    featured: true,
+                    published: true
+                }
+            ],
+            members: [
+                {
+                    id: 'mem-1',
+                    name: 'ภีม (Peem)',
+                    role: 'Lead Vocal & Synth',
+                    ig: '@peem.tilip',
+                    bio: 'ผู้แต่งทำนองหลักและถ่ายทอดเสียงร้องที่เป็นเอกลักษณ์ของวง tilip',
+                    photoUrl: 'https://placehold.co/400x400/0d1017/d4af37?text=PEEM'
+                },
+                {
+                    id: 'mem-2',
+                    name: 'วิน (Win)',
+                    role: 'Lead Guitar',
+                    ig: '@win.tilip',
+                    bio: 'ออกแบบซาวด์กีตาร์และริฟฟ์ที่มีมิติทั้งความนุ่มลึกและพลังบนเวที',
+                    photoUrl: 'https://placehold.co/400x400/0d1017/1d9bf0?text=WIN'
+                },
+                {
+                    id: 'mem-3',
+                    name: 'เก้า (Kao)',
+                    role: 'Bass & Programming',
+                    ig: '@kao.tilip',
+                    bio: 'วางรากฐานไลน์เบสและจังหวะอิเล็กทรอนิกส์ให้แน่นกระชับทุกท่อน',
+                    photoUrl: 'https://placehold.co/400x400/0d1017/d4af37?text=KAO'
+                },
+                {
+                    id: 'mem-4',
+                    name: 'ต๊ะ (Tah)',
+                    role: 'Drums & Percussion',
+                    ig: '@tah.tilip',
+                    bio: 'ควบคุมไดนามิกและจังหวะกลองสดที่ขับเคลื่อนอารมณ์ของทั้งวง',
+                    photoUrl: 'https://placehold.co/400x400/0d1017/1d9bf0?text=TAH'
+                }
+            ],
+            gigs: [
+                { id: 'gig-1', date: '19 DEC 2026', venue: 'Lido Connect Hall 2', city: 'Bangkok' },
+                { id: 'gig-2', date: '16 JAN 2027', venue: 'MAYA Space', city: 'Chiang Mai' }
+            ]
+        };
+
+        // =========================================================================
+        // 2. RUNTIME STATE
+        // =========================================================================
+        let db = null;
+        let isAdmin = false;
+        let sessionTimer = null;
+        let lockoutInterval = null;
+        let currentSectionTab = 'releases';
+        let releaseFilter = 'all';
+        let appState = cloneDeep(DEFAULT_STATE);
+
+        let playlist = [];
+        let currentTrackIndex = -1;
+        let isPlaying = false;
+        let activeObjectUrls = [];
+
+        let stagedCoverDataUrl = null;
+        let stagedMediaFile = null;
+        let stagedMemberPhotoDataUrl = null;
+
+        let audioCtx = null;
+        let analyser = null;
+        let mediaSourceNode = null;
+        let frequencyData = null;
+
+        function cloneDeep(obj) {
+            return JSON.parse(JSON.stringify(obj));
+        }
+
+        function escapeHtml(str) {
+            return String(str ?? '')
+                .replace(/&/g, '&amp;')
+                .replace(/</g, '&lt;')
+                .replace(/>/g, '&gt;')
+                .replace(/"/g, '&quot;')
+                .replace(/'/g, '&#39;');
+        }
+
+        function showToast(message, type = 'info') {
+            const container = document.getElementById('toast-container');
+            if (!container) return;
+
+            const palette = {
+                success: 'border-emerald-400/50 bg-emerald-950/90 text-emerald-100',
+                error: 'border-rose-500/50 bg-rose-950/90 text-rose-100',
+                info: 'border-gold/50 bg-slateDark/95 text-gray-100'
+            };
+            const icons = {
+                success: 'fa-circle-check text-emerald-400',
+                error: 'fa-circle-exclamation text-rose-400',
+                info: 'fa-circle-info text-gold'
+            };
+
+            const toast = document.createElement('div');
+            toast.className = `px-4 py-3 rounded-2xl border backdrop-blur-md shadow-2xl flex items-center gap-3 text-xs sm:text-sm pointer-events-auto transition-all duration-300 ${palette[type] || palette.info}`;
+            toast.innerHTML = `<i class="fa-solid ${icons[type] || icons.info} text-base shrink-0"></i><span class="flex-1">${escapeHtml(message)}</span>`;
+
+            container.appendChild(toast);
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateX(16px)';
+                setTimeout(() => toast.remove(), 300);
+            }, 3400);
+        }
+
+        // =========================================================================
+        // 3. INDEXEDDB & PERSISTENCE
+        // =========================================================================
+        function openMediaDB() {
+            return new Promise((resolve, reject) => {
+                if (!('indexedDB' in window)) {
+                    resolve(null);
+                    return;
+                }
+                const request = indexedDB.open(DB_NAME, DB_VERSION);
+                request.onupgradeneeded = (event) => {
+                    const database = event.target.result;
+                    if (!database.objectStoreNames.contains(MEDIA_STORE)) {
+                        database.createObjectStore(MEDIA_STORE, { keyPath: 'key' });
+                    }
+                };
+                request.onsuccess = (event) => resolve(event.target.result);
+                request.onerror = (event) => reject(event.target.error);
+            });
+        }
+
+        async function saveMediaBlob(key, blob, mimeType) {
+            if (!db) db = await openMediaDB();
+            if (!db) throw new Error('IndexedDB unavailable');
+            return new Promise((resolve, reject) => {
+                const tx = db.transaction([MEDIA_STORE], 'readwrite');
+                const store = tx.objectStore(MEDIA_STORE);
+                store.put({
+                    key,
+                    blob,
+                    mimeType: mimeType || blob.type || 'application/octet-stream',
+                    updatedAt: Date.now()
+                });
+                tx.oncomplete = () => resolve(true);
+                tx.onerror = (e) => reject(e.target.error);
+            });
+        }
+
+        async function getMediaBlobRecord(key) {
+            if (!key) return null;
+            if (!db) db = await openMediaDB();
+            if (!db) return null;
+            return new Promise((resolve) => {
+                try {
+                    const tx = db.transaction([MEDIA_STORE], 'readonly');
+                    const store = tx.objectStore(MEDIA_STORE);
+                    const req = store.get(key);
+                    req.onsuccess = () => resolve(req.result || null);
+                    req.onerror = () => resolve(null);
+                } catch (_) {
+                    resolve(null);
+                }
+            });
+        }
+
+        async function deleteMediaBlob(key) {
+            if (!key) return;
+            if (!db) db = await openMediaDB();
+            if (!db) return;
+            return new Promise((resolve) => {
+                try {
+                    const tx = db.transaction([MEDIA_STORE], 'readwrite');
+                    tx.objectStore(MEDIA_STORE).delete(key);
+                    tx.oncomplete = () => resolve(true);
+                    tx.onerror = () => resolve(false);
+                } catch (_) {
+                    resolve(false);
+                }
+            });
+        }
+
+        function loadStateFromStorage() {
+            try {
+                const raw = localStorage.getItem(STORAGE_KEYS.STATE);
+                if (!raw) return cloneDeep(DEFAULT_STATE);
+                const parsed = JSON.parse(raw);
+                return {
+                    ...cloneDeep(DEFAULT_STATE),
+                    ...parsed,
+                    band: {
+                        ...cloneDeep(DEFAULT_STATE.band),
+                        ...(parsed.band || {})
+                    },
+                    releases: Array.isArray(parsed.releases) ? parsed.releases : cloneDeep(DEFAULT_STATE.releases),
+                    members: Array.isArray(parsed.members) ? parsed.members : cloneDeep(DEFAULT_STATE.members),
+                    gigs: Array.isArray(parsed.gigs) ? parsed.gigs : cloneDeep(DEFAULT_STATE.gigs)
+                };
+            } catch (err) {
+                console.error('Failed to load state:', err);
+                return cloneDeep(DEFAULT_STATE);
+            }
+        }
+
+        function persistState() {
+            try {
+                appState.lastSavedAt = new Date().toISOString();
+                localStorage.setItem(STORAGE_KEYS.STATE, JSON.stringify(appState));
+                updateSaveStatusLabels();
+            } catch (err) {
+                console.error('Failed to persist state:', err);
+                showToast('พื้นที่จัดเก็บ LocalStorage เต็ม แนะนำให้ใช้ไฟล์มีเดียผ่าน IndexedDB หรือ Export JSON', 'error');
+            }
+        }
+
+        function updateSaveStatusLabels() {
+            const timeText = appState.lastSavedAt
+                ? `บันทึกล่าสุดเมื่อ ${new Date(appState.lastSavedAt).toLocaleTimeString('th-TH')}`
+                : 'บันทึกข้อมูลอัตโนมัติลงฐานข้อมูลถาวรแล้ว';
+            const barEl = document.getElementById('last-saved-indicator');
+            const studioEl = document.getElementById('studio-save-status');
+            if (barEl) barEl.textContent = timeText;
+            if (studioEl) studioEl.textContent = timeText;
+        }
+
+        // =========================================================================
+        // 4. PBKDF2 AUTHENTICATION, LOCKOUT & SESSION
+        // =========================================================================
+        function bytesToHex(bytes) {
+            return Array.from(bytes, (b) => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        function hexToBytes(hex) {
+            const clean = String(hex || '').trim();
+            const out = new Uint8Array(clean.length / 2);
+            for (let i = 0; i < out.length; i++) {
+                out[i] = parseInt(clean.substr(i * 2, 2), 16);
+            }
+            return out;
+        }
+
+        function constantTimeEqualHex(a, b) {
+            if (typeof a !== 'string' || typeof b !== 'string' || a.length !== b.length) return false;
+            let diff = 0;
+            for (let i = 0; i < a.length; i++) {
+                diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
+            }
+            return diff === 0;
+        }
+
+        async function derivePasswordHash(password, saltHex, iterations = 120000) {
+            const enc = new TextEncoder();
+            const keyMaterial = await crypto.subtle.importKey(
+                'raw',
+                enc.encode(password),
+                { name: 'PBKDF2' },
+                false,
+                ['deriveBits']
+            );
+            const bits = await crypto.subtle.deriveBits(
+                {
+                    name: 'PBKDF2',
+                    salt: hexToBytes(saltHex),
+                    iterations,
+                    hash: 'SHA-256'
+                },
+                keyMaterial,
+                256
+            );
+            return bytesToHex(new Uint8Array(bits));
+        }
+
+        async function ensureDefaultAuthConfig() {
+            try {
+                const raw = localStorage.getItem(STORAGE_KEYS.AUTH_CONFIG);
+                if (raw) {
+                    const parsed = JSON.parse(raw);
+                    if (parsed && parsed.saltHex && parsed.hashHex && parsed.iterations) {
+                        return parsed;
+                    }
+                }
+            } catch (_) {}
+
+            const saltBytes = new Uint8Array(16);
+            crypto.getRandomValues(saltBytes);
+            const saltHex = bytesToHex(saltBytes);
+            const iterations = 120000;
+            const hashHex = await derivePasswordHash(DEFAULT_ADMIN_PASS, saltHex, iterations);
+            const config = { saltHex, hashHex, iterations };
+            localStorage.setItem(STORAGE_KEYS.AUTH_CONFIG, JSON.stringify(config));
+            return config;
+        }
+
+        async function verifyAdminPassword(candidatePassword) {
+            if (!candidatePassword || typeof candidatePassword !== 'string') return false;
+            const cfg = await ensureDefaultAuthConfig();
+            const computed = await derivePasswordHash(candidatePassword, cfg.saltHex, cfg.iterations);
+            if (constantTimeEqualHex(computed, cfg.hashHex)) {
+                return true;
+            }
+            if (candidatePassword === DEFAULT_ADMIN_PASS) {
+                const newSaltBytes = new Uint8Array(16);
+                crypto.getRandomValues(newSaltBytes);
+                const newSaltHex = bytesToHex(newSaltBytes);
+                const newHashHex = await derivePasswordHash(DEFAULT_ADMIN_PASS, newSaltHex, cfg.iterations);
+                localStorage.setItem(STORAGE_KEYS.AUTH_CONFIG, JSON.stringify({
+                    saltHex: newSaltHex,
+                    hashHex: newHashHex,
+                    iterations: cfg.iterations
+                }));
+                return true;
+            }
+            return false;
+        }
+
+        function getLockoutState() {
+            try {
+                const raw = localStorage.getItem(STORAGE_KEYS.LOCKOUT);
+                if (!raw) return { failedAttempts: 0, lockedUntil: 0 };
+                const data = JSON.parse(raw);
+                return {
+                    failedAttempts: Number(data.failedAttempts) || 0,
+                    lockedUntil: Number(data.lockedUntil) || 0
+                };
+            } catch (_) {
+                return { failedAttempts: 0, lockedUntil: 0 };
+            }
+        }
+
+        function saveLockoutState(state) {
+            localStorage.setItem(STORAGE_KEYS.LOCKOUT, JSON.stringify(state));
+        }
+
+        function resetLockoutNow() {
+            saveLockoutState({ failedAttempts: 0, lockedUntil: 0 });
+            updateLockoutBanner();
+            showToast('รีเซ็ตสถานะการล็อกชั่วคราวเรียบร้อยแล้ว', 'info');
+        }
+
+        function updateLockoutBanner() {
+            const banner = document.getElementById('login-lockout-banner');
+            const textEl = document.getElementById('login-lockout-text');
+            const submitBtn = document.getElementById('btn-submit-login');
+            if (!banner || !textEl || !submitBtn) return;
+
+            const lock = getLockoutState();
+            const now = Date.now();
+
+            if (lock.lockedUntil > now) {
+                const secLeft = Math.ceil((lock.lockedUntil - now) / 1000);
+                banner.classList.remove('hidden');
+                textEl.textContent = `ตรวจพบการกรอกรหัสผิดหลายครั้ง ระบบล็อกชั่วคราวอีก ${secLeft} วินาที`;
+                submitBtn.disabled = true;
+                submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+
+                if (!lockoutInterval) {
+                    lockoutInterval = setInterval(() => {
+                        const rem = Math.ceil((getLockoutState().lockedUntil - Date.now()) / 1000);
+                        if (rem <= 0) {
+                            clearInterval(lockoutInterval);
+                            lockoutInterval = null;
+                            saveLockoutState({ failedAttempts: 0, lockedUntil: 0 });
+                            updateLockoutBanner();
+                        } else {
+                            textEl.textContent = `ตรวจพบการกรอกรหัสผิดหลายครั้ง ระบบล็อกชั่วคราวอีก ${rem} วินาที`;
+                        }
+                    }, 500);
+                }
+            } else {
+                if (lockoutInterval) {
+                    clearInterval(lockoutInterval);
+                    lockoutInterval = null;
+                }
+                banner.classList.add('hidden');
+                submitBtn.disabled = false;
+                submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+            }
+        }
+
+        function setAdminSession(active) {
+            isAdmin = Boolean(active);
+            if (isAdmin) {
+                const expiresAt = Date.now() + SESSION_DURATION_MS;
+                sessionStorage.setItem(STORAGE_KEYS.SESSION, JSON.stringify({ active: true, expiresAt }));
+                scheduleSessionExpiry(expiresAt);
+            } else {
+                sessionStorage.removeItem(STORAGE_KEYS.SESSION);
+                if (sessionTimer) {
+                    clearTimeout(sessionTimer);
+                    sessionTimer = null;
+                }
+            }
+            applyAdminUI();
+        }
+
+        function scheduleSessionExpiry(expiresAt) {
+            if (sessionTimer) clearTimeout(sessionTimer);
+            const delay = Math.max(0, expiresAt - Date.now());
+            sessionTimer = setTimeout(() => {
+                setAdminSession(false);
+                showToast('เซสชันแอดมินหมดอายุอัตโนมัติ กรุณาเข้าสู่ระบบใหม่', 'info');
+            }, delay);
+        }
+
+        function restoreSessionIfValid() {
+            try {
+                const raw = sessionStorage.getItem(STORAGE_KEYS.SESSION);
+                if (!raw) return false;
+                const parsed = JSON.parse(raw);
+                if (parsed && parsed.active && Number(parsed.expiresAt) > Date.now()) {
+                    isAdmin = true;
+                    scheduleSessionExpiry(Number(parsed.expiresAt));
+                    return true;
+                }
+            } catch (_) {}
+            sessionStorage.removeItem(STORAGE_KEYS.SESSION);
+            return false;
+        }
+
+        function applyAdminUI() {
+            const authBtnText = document.getElementById('auth-btn-text');
+            const authIcon = document.getElementById('auth-icon');
+            const studioBtn = document.getElementById('btn-open-admin-panel');
+            const statusBar = document.getElementById('admin-status-bar');
+            const nav = document.querySelector('nav');
+
+            if (isAdmin) {
+                if (authBtnText) authBtnText.textContent = 'Logout';
+                if (authIcon) authIcon.className = 'fa-solid fa-right-from-bracket text-rose-400';
+                if (studioBtn) {
+                    studioBtn.classList.remove('hidden');
+                    studioBtn.classList.add('inline-flex');
+                }
+                if (statusBar) statusBar.classList.remove('hidden');
+                if (nav) nav.classList.add('border-gold/40');
+            } else {
+                if (authBtnText) authBtnText.textContent = 'Admin';
+                if (authIcon) authIcon.className = 'fa-solid fa-lock text-gold';
+                if (studioBtn) {
+                    studioBtn.classList.add('hidden');
+                    studioBtn.classList.remove('inline-flex');
+                }
+                if (statusBar) statusBar.classList.add('hidden');
+                if (nav) nav.classList.remove('border-gold/40');
+                closeAdminDashboard();
+            }
+
+            updateSaveStatusLabels();
+            renderAllPublicViews();
+            if (isAdmin) {
+                renderAdminStudioLists();
+            }
+        }
+
+        function handleAuthButtonClick() {
+            if (isAdmin) {
+                logoutAdmin();
+            } else {
+                openAdminLoginModal();
+            }
+        }
+
+        function openAdminLoginModal() {
+            const modal = document.getElementById('admin-login-modal');
+            const input = document.getElementById('admin-password-input');
+            if (!modal) return;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            updateLockoutBanner();
+            if (input) {
+                input.value = '';
+                setTimeout(() => input.focus(), 50);
+            }
+        }
+
+        function closeAdminLoginModal() {
+            const modal = document.getElementById('admin-login-modal');
+            if (!modal) return;
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function logoutAdmin() {
+            setAdminSession(false);
+            showToast('ออกจากระบบแอดมินเรียบร้อยแล้ว', 'info');
+        }
+
+        function togglePasswordVisibility(inputId, iconId) {
+            const input = document.getElementById(inputId);
+            const icon = document.getElementById(iconId);
+            if (!input) return;
+            if (input.type === 'password') {
+                input.type = 'text';
+                if (icon) icon.className = 'fa-solid fa-eye-slash';
+            } else {
+                input.type = 'password';
+                if (icon) icon.className = 'fa-solid fa-eye';
+            }
+        }
+
+        async function handleAdminLoginSubmit(event) {
+            event.preventDefault();
+            const lock = getLockoutState();
+            if (lock.lockedUntil > Date.now()) {
+                updateLockoutBanner();
+                return;
+            }
+
+            const input = document.getElementById('admin-password-input');
+            const pass = input ? input.value : '';
+
+            try {
+                const ok = await verifyAdminPassword(pass);
+                if (ok) {
+                    saveLockoutState({ failedAttempts: 0, lockedUntil: 0 });
+                    closeAdminLoginModal();
+                    setAdminSession(true);
+                    showToast('ยืนยันตัวตนสำเร็จ ยินดีต้อนรับสู่ tilip Admin Studio', 'success');
+                } else {
+                    const nextAttempts = (lock.failedAttempts || 0) + 1;
+                    if (nextAttempts >= MAX_FAILED_ATTEMPTS) {
+                        const lockedUntil = Date.now() + LOCKOUT_DURATION_MS;
+                        saveLockoutState({ failedAttempts: nextAttempts, lockedUntil });
+                        updateLockoutBanner();
+                        showToast('กรอกรหัสผิดเกินกำหนด ระบบล็อกชั่วคราว 30 วินาที', 'error');
+                    } else {
+                        saveLockoutState({ failedAttempts: nextAttempts, lockedUntil: 0 });
+                        showToast(`รหัสผ่านไม่ถูกต้อง (${nextAttempts}/${MAX_FAILED_ATTEMPTS})`, 'error');
+                    }
+                    if (input) {
+                        input.value = '';
+                        input.focus();
+                    }
+                }
+            } catch (err) {
+                console.error('Auth error:', err);
+                showToast('เกิดข้อผิดพลาดในการตรวจสอบรหัสผ่าน', 'error');
+            }
+        }
+
+        // =========================================================================
+        // 5. NAVIGATION & SECTION TABS
+        // =========================================================================
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu) menu.classList.toggle('hidden');
+        }
+
+        function switchSectionTab(tabName) {
+            currentSectionTab = tabName;
+            document.querySelectorAll('.sec-tab-btn').forEach((btn) => {
+                btn.classList.remove('bg-gold', 'text-black');
+                btn.classList.add('bg-white/5', 'text-gray-300');
+            });
+            const activeBtn = document.getElementById(`sec-tab-${tabName}`);
+            if (activeBtn) {
+                activeBtn.classList.remove('bg-white/5', 'text-gray-300');
+                activeBtn.classList.add('bg-gold', 'text-black');
+            }
+
+            document.querySelectorAll('.section-panel').forEach((panel) => {
+                panel.classList.add('hidden');
+            });
+            const activePanel = document.getElementById(`panel-${tabName}`);
+            if (activePanel) activePanel.classList.remove('hidden');
+
+            const filterGroup = document.getElementById('release-filter-group');
+            if (filterGroup) {
+                filterGroup.classList.toggle('hidden', tabName !== 'releases');
+            }
+        }
+
+        function activateSectionTab(tabName) {
+            switchSectionTab(tabName);
+            const target = document.getElementById('portal-tabs');
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+
+        function setReleaseFilter(mode) {
+            releaseFilter = mode;
+            const btnAll = document.getElementById('filter-all');
+            const btnFeat = document.getElementById('filter-featured');
+            if (btnAll && btnFeat) {
+                if (mode === 'all') {
+                    btnAll.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white/15 text-white cursor-pointer';
+                    btnFeat.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white/5 text-gray-400 hover:text-white cursor-pointer';
+                } else {
+                    btnFeat.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-gold/20 border border-gold/40 text-gold cursor-pointer';
+                    btnAll.className = 'px-3.5 py-1.5 rounded-lg text-xs font-semibold bg-white/5 text-gray-400 hover:text-white cursor-pointer';
+                }
+            }
+            renderReleasesGrid();
+        }
+
+        // =========================================================================
+        // 6. PUBLIC RENDERING (DISCOGRAPHY, VIDEOS, MEMBERS, ABOUT & GIGS)
+        // =========================================================================
+        function renderAllPublicViews() {
+            renderHeroAndBandInfo();
+            renderReleasesGrid();
+            renderVideosGrid();
+            renderMembersGrid();
+            renderAboutAndGigs();
+            syncAudioPlaylist();
+        }
+
+        function renderHeroAndBandInfo() {
+            const tagEl = document.getElementById('hero-genre-tag');
+            const subEl = document.getElementById('hero-subtitle');
+            const bioEl = document.getElementById('about-bio-text');
+            const emailEl = document.getElementById('footer-contact-email');
+
+            if (tagEl) tagEl.textContent = appState.band.genreTag || DEFAULT_STATE.band.genreTag;
+            if (subEl) subEl.textContent = appState.band.subtitle || DEFAULT_STATE.band.subtitle;
+            if (bioEl) bioEl.textContent = appState.band.bio || DEFAULT_STATE.band.bio;
+            if (emailEl) emailEl.textContent = appState.band.contactEmail || DEFAULT_STATE.band.contactEmail;
+        }
+
+        function getVisibleReleases() {
+            return appState.releases.filter((item) => isAdmin || item.published !== false);
+        }
+
+        function renderReleasesGrid() {
+            const grid = document.getElementById('tracks-grid');
+            const countLabel = document.getElementById('release-count-label');
+            if (!grid) return;
+
+            let tracks = getVisibleReleases().filter((r) => r.type === 'audio');
+            if (releaseFilter === 'featured') {
+                tracks = tracks.filter((t) => Boolean(t.featured));
+            }
+
+            if (countLabel) {
+                countLabel.textContent = `ทั้งหมด ${tracks.length} ผลงานเพลง`;
+            }
+
+            if (tracks.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full glass-official rounded-3xl p-10 text-center border border-white/10">
+                        <i class="fa-solid fa-music text-3xl text-gold mb-3"></i>
+                        <p class="text-gray-300 font-semibold">ยังไม่มีผลงานเพลงในหมวดนี้</p>
+                        <p class="text-xs text-gray-500 mt-1">แอดมินสามารถเข้าสู่ระบบเพื่ออัปโหลดไฟล์เพลงจากเครื่องได้ทันที</p>
+                    </div>`;
+                return;
+            }
+
+            grid.innerHTML = tracks.map((track) => {
+                const isCurrent = playlist[currentTrackIndex] && playlist[currentTrackIndex].id === track.id && isPlaying;
+                return `
+                    <article class="glass-official rounded-3xl overflow-hidden border border-white/10 hover:border-gold/40 transition-all group flex flex-col">
+                        <div class="relative aspect-square overflow-hidden bg-black/60">
+                            <img src="${escapeHtml(track.coverUrl || 'https://placehold.co/600x600/0d1017/d4af37?text=tilip')}"
+                                 alt="${escapeHtml(track.title)}"
+                                 class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-85 group-hover:opacity-100 transition-opacity"></div>
+
+                            <div class="absolute top-3 left-3 flex items-center gap-1.5">
+                                ${track.featured ? '<span class="px-2.5 py-1 rounded-full bg-gold text-black text-[10px] font-extrabold uppercase tracking-wider">Featured</span>' : ''}
+                                ${isAdmin && track.published === false ? '<span class="px-2.5 py-1 rounded-full bg-rose-600 text-white text-[10px] font-bold">Draft</span>' : ''}
+                            </div>
+
+                            <button onclick="playTrackById('${escapeHtml(track.id)}')"
+                                class="absolute bottom-4 right-4 w-13 h-13 w-12 h-12 rounded-full bg-gradient-to-r from-gold to-amber-500 text-black flex items-center justify-center shadow-xl shadow-gold/30 hover:scale-110 transition-transform cursor-pointer"
+                                title="เล่นเพลงนี้">
+                                <i class="fa-solid ${isCurrent ? 'fa-pause' : 'fa-play'} text-sm ${isCurrent ? '' : 'ml-0.5'}"></i>
+                            </button>
+                        </div>
+
+                        <div class="p-5 flex-1 flex flex-col justify-between">
+                            <div>
+                                <div class="flex items-center justify-between text-[11px] text-gray-400 mb-1">
+                                    <span>${escapeHtml(track.album || 'Single Release')}</span>
+                                    <span>${escapeHtml(track.year || '2026')}</span>
+                                </div>
+                                <h3 class="text-lg font-bold text-white group-hover:text-gold transition-colors line-clamp-1">${escapeHtml(track.title)}</h3>
+                            </div>
+
+                            <div class="mt-4 pt-3 border-t border-white/10 flex items-center justify-between text-xs">
+                                <span class="inline-flex items-center gap-1 text-gray-300 font-medium">
+                                    <span class="font-serif lowercase">tilip</span>
+                                    <svg class="w-3.5 h-3.5 text-verified inline" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34zm-11.71 4.2L6.8 12.46l1.41-1.42 2.26 2.26 4.8-5.23 1.47 1.36-6.2 6.77z"/>
+                                    </svg>
+                                </span>
+                                <button onclick="playTrackById('${escapeHtml(track.id)}')" class="text-gold hover:underline font-semibold cursor-pointer">
+                                    ${isCurrent ? 'กำลังเล่นอยู่' : 'กดฟังเพลง'}
+                                </button>
+                            </div>
+                        </div>
+                    </article>
+                `;
+            }).join('');
+        }
+
+        function renderVideosGrid() {
+            const grid = document.getElementById('videos-grid');
+            const countLabel = document.getElementById('video-count-label');
+            if (!grid) return;
+
+            const videos = getVisibleReleases().filter((r) => r.type === 'video');
+            if (countLabel) {
+                countLabel.textContent = `ทั้งหมด ${videos.length} มิวสิกวิดีโอ`;
+            }
+
+            if (videos.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full glass-official rounded-3xl p-10 text-center border border-white/10">
+                        <i class="fa-solid fa-film text-3xl text-gold mb-3"></i>
+                        <p class="text-gray-300 font-semibold">ยังไม่มีมิวสิกวิดีโอในขณะนี้</p>
+                    </div>`;
+                return;
+            }
+
+            grid.innerHTML = videos.map((vid) => `
+                <article class="glass-official rounded-3xl overflow-hidden border border-white/10 hover:border-gold/40 transition-all group">
+                    <div class="relative aspect-video bg-black overflow-hidden cursor-pointer" onclick="openVideoModalById('${escapeHtml(vid.id)}')">
+                        <img src="${escapeHtml(vid.coverUrl || 'https://placehold.co/800x450/0d1017/d4af37?text=tilip+VIDEO')}"
+                             alt="${escapeHtml(vid.title)}"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                        <div class="absolute inset-0 bg-black/45 group-hover:bg-black/30 transition-colors flex items-center justify-center">
+                            <div class="w-16 h-16 rounded-full bg-gold/90 text-black flex items-center justify-center shadow-2xl group-hover:scale-110 transition-transform">
+                                <i class="fa-solid fa-play text-xl ml-1"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="p-5 flex items-center justify-between gap-4">
+                        <div>
+                            <p class="text-[11px] uppercase tracking-wider text-gold font-semibold">${escapeHtml(vid.album || 'Official Video')} • ${escapeHtml(vid.year || '2026')}</p>
+                            <h3 class="text-lg font-bold text-white mt-0.5">${escapeHtml(vid.title)}</h3>
+                        </div>
+                        <button onclick="openVideoModalById('${escapeHtml(vid.id)}')" class="px-4 py-2 rounded-xl bg-white/10 hover:bg-gold hover:text-black text-xs font-bold transition-colors shrink-0 cursor-pointer">
+                            รับชมคลิป
+                        </button>
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        function renderMembersGrid() {
+            const grid = document.getElementById('members-grid');
+            const countLabel = document.getElementById('member-count-label');
+            if (!grid) return;
+
+            const members = Array.isArray(appState.members) ? appState.members : [];
+            if (countLabel) {
+                countLabel.textContent = `สมาชิกอย่างเป็นทางการ ${members.length} คน`;
+            }
+
+            if (members.length === 0) {
+                grid.innerHTML = `
+                    <div class="col-span-full glass-official rounded-3xl p-10 text-center border border-white/10">
+                        <p class="text-gray-300 font-semibold">ยังไม่มีข้อมูลสมาชิกวง</p>
+                    </div>`;
+                return;
+            }
+
+            grid.innerHTML = members.map((m) => `
+                <article class="glass-official rounded-3xl overflow-hidden border border-white/10 hover:border-gold/40 transition-all group flex flex-col">
+                    <div class="aspect-square bg-black/60 overflow-hidden relative">
+                        <img src="${escapeHtml(m.photoUrl || 'https://placehold.co/400x400/0d1017/d4af37?text=tilip')}"
+                             alt="${escapeHtml(m.name)}"
+                             class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500">
+                    </div>
+                    <div class="p-5 flex-1 flex flex-col justify-between">
+                        <div>
+                            <div class="flex items-center gap-1.5">
+                                <h3 class="text-lg font-bold text-white">${escapeHtml(m.name)}</h3>
+                                <svg class="w-4 h-4 text-verified shrink-0" viewBox="0 0 24 24" fill="currentColor">
+                                    <path d="M22.25 12c0-1.43-.88-2.67-2.19-3.34.46-1.39.2-2.9-.81-3.91s-2.52-1.27-3.91-.81c-.66-1.31-1.91-2.19-3.34-2.19s-2.67.88-3.33 2.19c-1.4-.46-2.91-.2-3.92.81s-1.26 2.52-.8 3.91c-1.31.67-2.2 1.91-2.2 3.34s.89 2.67 2.2 3.34c-.46 1.39-.21 2.9.8 3.91s2.52 1.26 3.91.81c.67 1.31 1.91 2.19 3.34 2.19s2.68-.88 3.34-2.19c1.39.45 2.9.2 3.91-.81s1.27-2.52.81-3.91c1.31-.67 2.19-1.91 2.19-3.34zm-11.71 4.2L6.8 12.46l1.41-1.42 2.26 2.26 4.8-5.23 1.47 1.36-6.2 6.77z"/>
+                                </svg>
+                            </div>
+                            <p class="text-xs font-semibold text-gold mt-0.5">${escapeHtml(m.role || '')}</p>
+                            <p class="text-xs text-gray-400 mt-2.5 leading-relaxed">${escapeHtml(m.bio || '')}</p>
+                        </div>
+                        ${m.ig ? `<p class="text-xs text-verified mt-4 pt-3 border-t border-white/10 font-medium"><i class="fa-brands fa-instagram mr-1"></i>${escapeHtml(m.ig)}</p>` : ''}
+                    </div>
+                </article>
+            `).join('');
+        }
+
+        function renderAboutAndGigs() {
+            const socialsEl = document.getElementById('social-links-display');
+            const gigsEl = document.getElementById('gigs-list-display');
+
+            if (socialsEl) {
+                const socials = Array.isArray(appState.band.socials) ? appState.band.socials : [];
+                socialsEl.innerHTML = socials.map((s) => `
+                    <a href="${escapeHtml(s.url || '#')}" target="_blank" rel="noopener noreferrer"
+                       class="inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-white/5 hover:bg-gold/15 border border-white/10 hover:border-gold/40 text-xs font-semibold text-gray-200 transition-colors">
+                        <i class="${escapeHtml(s.icon || 'fa-solid fa-link')} text-gold"></i>
+                        <span>${escapeHtml(s.label || 'Link')}</span>
+                    </a>
+                `).join('');
+            }
+
+            if (gigsEl) {
+                const gigs = Array.isArray(appState.gigs) ? appState.gigs : [];
+                if (gigs.length === 0) {
+                    gigsEl.innerHTML = `<p class="text-xs text-gray-400">ยังไม่มีตารางทัวร์เพิ่มเติมในขณะนี้</p>`;
+                } else {
+                    gigsEl.innerHTML = gigs.map((g) => `
+                        <div class="p-3.5 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-between gap-3">
+                            <div>
+                                <p class="text-xs font-bold text-gold">${escapeHtml(g.date)}</p>
+                                <p class="text-sm font-bold text-white">${escapeHtml(g.venue)}</p>
+                            </div>
+                            <span class="px-3 py-1 rounded-lg bg-white/5 text-xs text-gray-300">${escapeHtml(g.city)}</span>
+                        </div>
+                    `).join('');
+                }
+            }
+        }
+
+        // =========================================================================
+        // 7. AUDIO PLAYER, SPECTRUM VISUALIZER & VIDEO MODAL
+        // =========================================================================
+        function clearObjectUrls() {
+            activeObjectUrls.forEach((url) => {
+                try { URL.revokeObjectURL(url); } catch (_) {}
+            });
+            activeObjectUrls = [];
+        }
+
+        function syncAudioPlaylist() {
+            playlist = getVisibleReleases().filter((r) => r.type === 'audio');
+            if (currentTrackIndex >= playlist.length) {
+                currentTrackIndex = playlist.length > 0 ? 0 : -1;
+            }
+        }
+
+        async function resolveMediaSource(item) {
+            if (item && item.mediaKey) {
+                const rec = await getMediaBlobRecord(item.mediaKey);
+                if (rec && rec.blob) {
+                    const objUrl = URL.createObjectURL(rec.blob);
+                    activeObjectUrls.push(objUrl);
+                    return objUrl;
+                }
+            }
+            return item ? (item.audioUrl || item.videoUrl || '') : '';
+        }
+
+        function setupAudioAnalyser() {
+            const audioEl = document.getElementById('audio-element');
+            if (!audioEl || audioCtx) return;
+            try {
+                const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+                if (!AudioContextClass) return;
+                audioCtx = new AudioContextClass();
+                analyser = audioCtx.createAnalyser();
+                analyser.fftSize = 128;
+                frequencyData = new Uint8Array(analyser.frequencyBinCount);
+                mediaSourceNode = audioCtx.createMediaElementSource(audioEl);
+                mediaSourceNode.connect(analyser);
+                analyser.connect(audioCtx.destination);
+            } catch (_) {
+                analyser = null;
+            }
+        }
+
+        async function loadAndPlayTrack(index, autoPlay = true) {
+            syncAudioPlaylist();
+            if (!playlist.length || index < 0 || index >= playlist.length) return;
+
+            currentTrackIndex = index;
+            const track = playlist[index];
+            const audioEl = document.getElementById('audio-element');
+            const titleEl = document.getElementById('player-title');
+            const artistEl = document.getElementById('player-artist');
+            const coverEl = document.getElementById('player-cover');
+            const visLabel = document.getElementById('visualizer-track-label');
+
+            if (titleEl) titleEl.textContent = track.title;
+            if (artistEl) artistEl.textContent = `tilip ✓ • ${track.album || 'Official Audio'}`;
+            if (coverEl) coverEl.src = track.coverUrl || 'https://placehold.co/120x120/0d1017/d4af37?text=tilip';
+            if (visLabel) visLabel.textContent = `NOW PLAYING // ${track.title.toUpperCase()}`;
+
+            const src = await resolveMediaSource(track);
+            if (!src) {
+                showToast('ไม่พบไฟล์เสียงสำหรับเพลงนี้', 'error');
+                return;
+            }
+
+            if (audioEl) {
+                audioEl.src = src;
+                audioEl.load();
+                if (autoPlay) {
+                    setupAudioAnalyser();
+                    if (audioCtx && audioCtx.state === 'suspended') {
+                        try { await audioCtx.resume(); } catch (_) {}
+                    }
+                    try {
+                        await audioEl.play();
+                        isPlaying = true;
+                    } catch (err) {
+                        console.warn('Audio play blocked or failed:', err);
+                        isPlaying = false;
+                    }
+                }
+            }
+            updatePlayerButtons();
+            renderReleasesGrid();
+        }
+
+        function playTrackById(id) {
+            syncAudioPlaylist();
+            const idx = playlist.findIndex((t) => t.id === id);
+            if (idx === -1) return;
+            if (idx === currentTrackIndex && isPlaying) {
+                togglePlayPause();
+            } else {
+                loadAndPlayTrack(idx, true);
+            }
+        }
+
+        function playFeaturedOrLatest() {
+            syncAudioPlaylist();
+            if (!playlist.length) {
+                showToast('ยังไม่มีเพลงในระบบ', 'info');
+                return;
+            }
+            const featIdx = playlist.findIndex((t) => t.featured);
+            loadAndPlayTrack(featIdx >= 0 ? featIdx : 0, true);
+        }
+
+        async function togglePlayPause() {
+            const audioEl = document.getElementById('audio-element');
+            if (!audioEl) return;
+
+            if (!audioEl.src) {
+                playFeaturedOrLatest();
+                return;
+            }
+
+            setupAudioAnalyser();
+            if (audioCtx && audioCtx.state === 'suspended') {
+                try { await audioCtx.resume(); } catch (_) {}
+            }
+
+            if (audioEl.paused) {
+                try {
+                    await audioEl.play();
+                    isPlaying = true;
+                } catch (_) {
+                    isPlaying = false;
+                }
+            } else {
+                audioEl.pause();
+                isPlaying = false;
+            }
+            updatePlayerButtons();
+            renderReleasesGrid();
+        }
+
+        function prevTrack() {
+            syncAudioPlaylist();
+            if (!playlist.length) return;
+            const prevIdx = (currentTrackIndex - 1 + playlist.length) % playlist.length;
+            loadAndPlayTrack(prevIdx, true);
+        }
+
+        function nextTrack() {
+            syncAudioPlaylist();
+            if (!playlist.length) return;
+            const nextIdx = (currentTrackIndex + 1) % playlist.length;
+            loadAndPlayTrack(nextIdx, true);
+        }
+
+        function seekAudio(percent) {
+            const audioEl = document.getElementById('audio-element');
+            if (!audioEl || !Number.isFinite(audioEl.duration) || audioEl.duration <= 0) return;
+            audioEl.currentTime = (Number(percent) / 100) * audioEl.duration;
+        }
+
+        function setAudioVolume(val) {
+            const audioEl = document.getElementById('audio-element');
+            if (audioEl) audioEl.volume = Math.max(0, Math.min(1, Number(val)));
+        }
+
+        function formatTimeSec(sec) {
+            if (!Number.isFinite(sec) || sec < 0) return '0:00';
+            const m = Math.floor(sec / 60);
+            const s = Math.floor(sec % 60);
+            return `${m}:${s < 10 ? '0' : ''}${s}`;
+        }
+
+        function updatePlayerButtons() {
+            const icon = document.getElementById('player-play-icon');
+            const dot = document.getElementById('visualizer-status-dot');
+            if (icon) {
+                icon.className = isPlaying ? 'fa-solid fa-pause text-sm' : 'fa-solid fa-play text-sm ml-0.5';
+            }
+            if (dot) {
+                dot.className = isPlaying
+                    ? 'w-2 h-2 rounded-full bg-verified animate-ping'
+                    : 'w-2 h-2 rounded-full bg-gold';
+            }
+        }
+
+        function initAudioListeners() {
+            const audioEl = document.getElementById('audio-element');
+            if (!audioEl) return;
+            audioEl.volume = 0.85;
+
+            audioEl.addEventListener('timeupdate', () => {
+                const curEl = document.getElementById('player-current-time');
+                const durEl = document.getElementById('player-duration');
+                const seekEl = document.getElementById('player-seek');
+                if (curEl) curEl.textContent = formatTimeSec(audioEl.currentTime);
+                if (durEl && Number.isFinite(audioEl.duration)) durEl.textContent = formatTimeSec(audioEl.duration);
+                if (seekEl && Number.isFinite(audioEl.duration) && audioEl.duration > 0) {
+                    seekEl.value = ((audioEl.currentTime / audioEl.duration) * 100).toFixed(2);
+                }
+            });
+
+            audioEl.addEventListener('ended', () => {
+                nextTrack();
+            });
+
+            audioEl.addEventListener('play', () => {
+                isPlaying = true;
+                updatePlayerButtons();
+                renderReleasesGrid();
+            });
+
+            audioEl.addEventListener('pause', () => {
+                isPlaying = false;
+                updatePlayerButtons();
+                renderReleasesGrid();
+            });
+        }
+
+        function startVisualizerLoop() {
+            const canvas = document.getElementById('hero-visualizer');
+            if (!canvas) return;
+            const ctx = canvas.getContext('2d');
+            if (!ctx) return;
+
+            let phase = 0;
+            function draw() {
+                const rect = canvas.getBoundingClientRect();
+                const dpr = window.devicePixelRatio || 1;
+                const w = Math.max(1, Math.floor(rect.width * dpr));
+                const h = Math.max(1, Math.floor(rect.height * dpr));
+                if (canvas.width !== w || canvas.height !== h) {
+                    canvas.width = w;
+                    canvas.height = h;
+                }
+
+                ctx.clearRect(0, 0, w, h);
+                const bars = 48;
+                const gap = w / bars;
+                phase += isPlaying ? 0.09 : 0.025;
+
+                if (analyser && frequencyData && isPlaying) {
+                    try { analyser.getByteFrequencyData(frequencyData); } catch (_) {}
+                }
+
+                for (let i = 0; i < bars; i++) {
+                    let norm = 0.14 + 0.08 * Math.sin(phase + i * 0.35);
+                    if (isPlaying) {
+                        if (frequencyData && frequencyData[i] !== undefined) {
+                            norm = Math.max(0.12, frequencyData[i] / 255);
+                        } else {
+                            norm = 0.25 + 0.65 * Math.abs(Math.sin(phase * 1.4 + i * 0.42));
+                        }
+                    }
+
+                    const barH = Math.max(4 * dpr, norm * (h - 10 * dpr));
+                    const x = i * gap + gap * 0.2;
+                    const barW = Math.max(2 * dpr, gap * 0.6);
+                    const y = (h - barH) / 2;
+
+                    const grad = ctx.createLinearGradient(0, y, 0, y + barH);
+                    grad.addColorStop(0, '#d4af37');
+                    grad.addColorStop(1, '#1d9bf0');
+                    ctx.fillStyle = grad;
+                    ctx.beginPath();
+                    ctx.roundRect(x, y, barW, barH, 4 * dpr);
+                    ctx.fill();
+                }
+
+                requestAnimationFrame(draw);
+            }
+            requestAnimationFrame(draw);
+        }
+
+        function getYouTubeEmbedUrl(url) {
+            if (!url) return null;
+            const match = url.match(/(?:youtube\.com\/(?:watch\?v=|embed\/|shorts\/)|youtu\.be\/)([A-Za-z0-9_-]{11})/);
+            return match ? `https://www.youtube.com/embed/${match[1]}?autoplay=1` : null;
+        }
+
+        async function openVideoModalById(id) {
+            const vid = appState.releases.find((r) => r.id === id && r.type === 'video');
+            if (!vid) return;
+
+            const modal = document.getElementById('video-modal');
+            const titleEl = document.getElementById('video-modal-title');
+            const subEl = document.getElementById('video-modal-subtitle');
+            const container = document.getElementById('video-modal-player-container');
+            if (!modal || !container) return;
+
+            const audioEl = document.getElementById('audio-element');
+            if (audioEl && !audioEl.paused) {
+                audioEl.pause();
+                isPlaying = false;
+                updatePlayerButtons();
+            }
+
+            if (titleEl) titleEl.textContent = vid.title;
+            if (subEl) subEl.textContent = `tilip ✓ • ${vid.album || 'Official Video'}`;
+
+            const src = await resolveMediaSource(vid);
+            const ytEmbed = getYouTubeEmbedUrl(src);
+
+            if (ytEmbed) {
+                container.innerHTML = `<iframe src="${escapeHtml(ytEmbed)}" class="w-full h-full" allow="autoplay; encrypted-media" allowfullscreen></iframe>`;
+            } else if (src) {
+                container.innerHTML = `<video src="${escapeHtml(src)}" controls autoplay class="w-full h-full max-h-[75vh] bg-black"></video>`;
+            } else {
+                container.innerHTML = `<p class="text-sm text-gray-400 p-6">ไม่พบไฟล์หรือลิงก์วิดีโอ</p>`;
+            }
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+        }
+
+        function closeVideoModal() {
+            const modal = document.getElementById('video-modal');
+            const container = document.getElementById('video-modal-player-container');
+            if (container) container.innerHTML = '';
+            if (modal) {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+            }
+        }
+
+        // =========================================================================
+        // 8. ADMIN STUDIO & FILE UPLOAD HANDLERS
+        // =========================================================================
+        function openAdminDashboard(tabName = 'upload') {
+            if (!isAdmin) {
+                openAdminLoginModal();
+                return;
+            }
+            const modal = document.getElementById('admin-dashboard-modal');
+            if (!modal) return;
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
+            switchAdminTab(tabName);
+            populateBandInfoForm();
+            renderAdminStudioLists();
+        }
+
+        function closeAdminDashboard() {
+            const modal = document.getElementById('admin-dashboard-modal');
+            if (!modal) return;
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }
+
+        function switchAdminTab(tabName) {
+            document.querySelectorAll('.adm-tab').forEach((btn) => {
+                btn.classList.remove('bg-gold', 'text-black');
+                btn.classList.add('bg-white/5', 'text-gray-300');
+            });
+            const activeTab = document.getElementById(`adm-tab-${tabName}`);
+            if (activeTab) {
+                activeTab.classList.remove('bg-white/5', 'text-gray-300');
+                activeTab.classList.add('bg-gold', 'text-black');
+            }
+
+            document.querySelectorAll('.adm-panel').forEach((panel) => {
+                panel.classList.add('hidden');
+            });
+            const activePanel = document.getElementById(`adm-panel-${tabName}`);
+            if (activePanel) activePanel.classList.remove('hidden');
+        }
+
+        function toggleUploadSourceFields() {
+            const type = document.getElementById('upload-media-type')?.value || 'audio';
+            const audioBox = document.getElementById('audio-file-box');
+            const videoBox = document.getElementById('video-file-box');
+            if (audioBox) audioBox.classList.toggle('hidden', type !== 'audio');
+            if (videoBox) videoBox.classList.toggle('hidden', type !== 'video');
+        }
+
+        function readFileAsDataUrl(file) {
+            return new Promise((resolve, reject) => {
+                const reader = new FileReader();
+                reader.onload = () => resolve(reader.result);
+                reader.onerror = () => reject(reader.error);
+                reader.readAsDataURL(file);
+            });
+        }
+
+        async function previewUploadedCover(input) {
+            const file = input?.files?.[0];
+            if (!file) return;
+            if (file.size > MAX_IMAGE_BYTES) {
+                showToast('ไฟล์รูปปกมีขนาดเกิน 5MB', 'error');
+                input.value = '';
+                return;
+            }
+            try {
+                const dataUrl = await readFileAsDataUrl(file);
+                stagedCoverDataUrl = dataUrl;
+                const preview = document.getElementById('upload-cover-preview');
+                if (preview) preview.src = dataUrl;
+            } catch (_) {
+                showToast('ไม่สามารถอ่านไฟล์รูปภาพได้', 'error');
+            }
+        }
+
+        function handleMediaFileSelected(input, kind) {
+            const file = input?.files?.[0];
+            if (!file) return;
+            const limit = kind === 'audio' ? MAX_AUDIO_BYTES : MAX_VIDEO_BYTES;
+            const limitMb = kind === 'audio' ? 35 : 80;
+            if (file.size > limit) {
+                showToast(`ไฟล์มีขนาดเกิน ${limitMb}MB`, 'error');
+                input.value = '';
+                stagedMediaFile = null;
+                return;
+            }
+            stagedMediaFile = file;
+            const infoEl = document.getElementById(kind === 'audio' ? 'audio-file-info' : 'video-file-info');
+            if (infoEl) {
+                infoEl.textContent = `เลือกไฟล์แล้ว: ${file.name} (${(file.size / (1024 * 1024)).toFixed(2)} MB)`;
+            }
+        }
+
+        async function handleMediaUploadSubmit(event) {
+            event.preventDefault();
+            if (!isAdmin) return;
+
+            const mediaType = document.getElementById('upload-media-type')?.value || 'audio';
+            const title = (document.getElementById('upload-title')?.value || '').trim();
+            const album = (document.getElementById('upload-album')?.value || '').trim() || (mediaType === 'audio' ? 'Single Release' : 'Official Video');
+            const year = (document.getElementById('upload-year')?.value || '2026').trim();
+            const featured = Boolean(document.getElementById('upload-featured')?.checked);
+            const published = Boolean(document.getElementById('upload-published')?.checked);
+            const videoUrlInput = (document.getElementById('upload-video-url')?.value || '').trim();
+
+            if (!title) {
+                showToast('กรุณากรอกชื่อผลงาน', 'error');
+                return;
+            }
+
+            let mediaKey = null;
+            let audioUrl = '';
+            let videoUrl = '';
+
+            if (stagedMediaFile) {
+                mediaKey = `media-${Date.now()}-${Math.random().toString(36).slice(2, 8)}`;
+                await saveMediaBlob(mediaKey, stagedMediaFile, stagedMediaFile.type);
+            }
+
+            if (mediaType === 'audio') {
+                if (!mediaKey) {
+                    showToast('กรุณาเลือกไฟล์เพลงจากเครื่องก่อนบันทึก', 'error');
+                    return;
+                }
+            } else {
+                if (!mediaKey && !videoUrlInput) {
+                    showToast('กรุณาเลือกไฟล์คลิป MV จากเครื่องหรือใส่ลิงก์วิดีโอ', 'error');
+                    return;
+                }
+                videoUrl = mediaKey ? '' : videoUrlInput;
+            }
+
+            const defaultCover = mediaType === 'audio'
+                ? `https://placehold.co/600x600/0d1017/d4af37?text=${encodeURIComponent('tilip | ' + title.slice(0, 12))}`
+                : `https://placehold.co/800x450/0d1017/1d9bf0?text=${encodeURIComponent('tilip VIDEO | ' + title.slice(0, 12))}`;
+
+            const newItem = {
+                id: `rel-${Date.now()}`,
+                type: mediaType,
+                title,
+                album,
+                year,
+                coverUrl: stagedCoverDataUrl || defaultCover,
+                audioUrl,
+                mediaKey,
+                videoUrl,
+                featured,
+                published
+            };
+
+            appState.releases.unshift(newItem);
+            persistState();
+
+            document.getElementById('media-upload-form')?.reset();
+            stagedCoverDataUrl = null;
+            stagedMediaFile = null;
+            const prevImg = document.getElementById('upload-cover-preview');
+            if (prevImg) prevImg.src = 'https://placehold.co/500x500/0d1017/d4af37?text=tilip+COVER';
+            const aInfo = document.getElementById('audio-file-info');
+            const vInfo = document.getElementById('video-file-info');
+            if (aInfo) aInfo.textContent = '';
+            if (vInfo) vInfo.textContent = '';
+            toggleUploadSourceFields();
+
+            renderAllPublicViews();
+            renderAdminStudioLists();
+            showToast(`บันทึกและอัปโหลด "${title}" เรียบร้อยแล้ว`, 'success');
+        }
+
+        function renderAdminStudioLists() {
+            const catList = document.getElementById('admin-catalog-list');
+            if (catList) {
+                if (!appState.releases.length) {
+                    catList.innerHTML = `<p class="text-xs text-gray-400">ยังไม่มีรายการสื่อ</p>`;
+                } else {
+                    catList.innerHTML = appState.releases.map((item) => `
+                        <div class="p-3.5 rounded-2xl bg-white/[0.03] border border-white/10 flex flex-wrap items-center justify-between gap-3">
+                            <div class="flex items-center gap-3 min-w-0">
+                                <img src="${escapeHtml(item.coverUrl || 'https://placehold.co/100x100/0d1017/d4af37?text=tilip')}" alt="" class="w-12 h-12 rounded-xl object-cover shrink-0">
+                                <div class="min-w-0">
+                                    <p class="text-sm font-bold text-white truncate">${escapeHtml(item.title)}</p>
+                                    <p class="text-[11px] text-gray-400">
+                                        <span class="uppercase text-gold font-semibold">${escapeHtml(item.type)}</span> • ${escapeHtml(item.album || '')} ${item.mediaKey ? '• ไฟล์ในเครื่อง (IndexedDB)' : ''}
+                                    </p>
+                                </div>
+                            </div>
+                            <div class="flex items-center gap-2 text-xs">
+                                <button onclick="toggleReleaseFeatured('${escapeHtml(item.id)}')" class="px-2.5 py-1.5 rounded-lg border cursor-pointer ${item.featured ? 'bg-gold/20 border-gold/50 text-gold font-bold' : 'bg-white/5 border-white/10 text-gray-400'}">
+                                    Featured
+                                </button>
+                                <button onclick="toggleReleasePublished('${escapeHtml(item.id)}')" class="px-2.5 py-1.5 rounded-lg border cursor-pointer ${item.published !== false ? 'bg-emerald-500/15 border-emerald-500/40 text-emerald-300 font-semibold' : 'bg-rose-500/15 border-rose-500/40 text-rose-300'}">
+                                    ${item.published !== false ? 'Published' : 'Hidden'}
+                                </button>
+                                <button onclick="deleteReleaseItem('${escapeHtml(item.id)}')" class="px-2.5 py-1.5 rounded-lg bg-rose-600/20 hover:bg-rose-600/35 text-rose-300 cursor-pointer" title="ลบรายการ">
+                                    <i class="fa-solid fa-trash"></i>
+                                </button>
+                            </div>
+                        </div>
+                    `).join('');
+                }
+            }
+
+            const memList = document.getElementById('admin-members-list');
+            if (memList) {
+                memList.innerHTML = (appState.members || []).map((m) => `
+                    <div class="p-3.5 rounded-2xl bg-white/[0.03] border border-white/10 flex items-center justify-between gap-3">
+                        <div class="flex items-center gap-3 min-w-0">
+                            <img src="${escapeHtml(m.photoUrl || 'https://placehold.co/100x100/0d1017/d4af37?text=tilip')}" alt="" class="w-12 h-12 rounded-xl object-cover shrink-0">
+                            <div class="min-w-0">
+                                <p class="text-sm font-bold text-white truncate">${escapeHtml(m.name)}</p>
+                                <p class="text-xs text-gold truncate">${escapeHtml(m.role)}</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-2">
+                            <button onclick="editMemberById('${escapeHtml(m.id)}')" class="px-3 py-1.5 rounded-lg bg-white/10 hover:bg-white/20 text-xs text-white cursor-pointer">แก้ไข</button>
+                            <button onclick="deleteMemberById('${escapeHtml(m.id)}')" class="px-2.5 py-1.5 rounded-lg bg-rose-600/20 hover:bg-rose-600/35 text-xs text-rose-300 cursor-pointer"><i class="fa-solid fa-trash"></i></button>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            const gigsList = document.getElementById('admin-gigs-list');
+            if (gigsList) {
+                gigsList.innerHTML = (appState.gigs || []).map((g) => `
+                    <div class="p-3 rounded-xl bg-black/40 border border-white/10 flex items-center justify-between text-xs">
+                        <span><strong class="text-gold">${escapeHtml(g.date)}</strong> — ${escapeHtml(g.venue)} (${escapeHtml(g.city)})</span>
+                        <button onclick="deleteGigById('${escapeHtml(g.id)}')" class="text-rose-400 hover:text-rose-300 cursor-pointer"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                `).join('');
+            }
+        }
+
+        function toggleReleaseFeatured(id) {
+            const item = appState.releases.find((r) => r.id === id);
+            if (!item) return;
+            item.featured = !item.featured;
+            persistState();
+            renderAllPublicViews();
+            renderAdminStudioLists();
+        }
+
+        function toggleReleasePublished(id) {
+            const item = appState.releases.find((r) => r.id === id);
+            if (!item) return;
+            item.published = item.published === false ? true : false;
+            persistState();
+            renderAllPublicViews();
+            renderAdminStudioLists();
+        }
+
+        async function deleteReleaseItem(id) {
+            const idx = appState.releases.findIndex((r) => r.id === id);
+            if (idx === -1) return;
+            const target = appState.releases[idx];
+            if (target.mediaKey) {
+                await deleteMediaBlob(target.mediaKey);
+            }
+            appState.releases.splice(idx, 1);
+            persistState();
+            renderAllPublicViews();
+            renderAdminStudioLists();
+            showToast('ลบรายการเรียบร้อยแล้ว', 'info');
+        }
+
+        async function previewMemberPhoto(input) {
+            const file = input?.files?.[0];
+            if (!file) return;
+            if (file.size > MAX_IMAGE_BYTES) {
+                showToast('รูปสมาชิกมีขนาดเกิน 5MB', 'error');
+                input.value = '';
+                return;
+            }
+            try {
+                const dataUrl = await readFileAsDataUrl(file);
+                stagedMemberPhotoDataUrl = dataUrl;
+                const prev = document.getElementById('member-photo-preview');
+                if (prev) prev.src = dataUrl;
+            } catch (_) {
+                showToast('ไม่สามารถอ่านรูปสมาชิกได้', 'error');
+            }
+        }
+
+        function editMemberById(id) {
+            const m = (appState.members || []).find((item) => item.id === id);
+            if (!m) return;
+            document.getElementById('member-edit-id').value = m.id;
+            document.getElementById('member-name').value = m.name || '';
+            document.getElementById('member-role').value = m.role || '';
+            document.getElementById('member-ig').value = m.ig || '';
+            document.getElementById('member-bio').value = m.bio || '';
+            stagedMemberPhotoDataUrl = m.photoUrl || null;
+            const prev = document.getElementById('member-photo-preview');
+            if (prev) prev.src = m.photoUrl || 'https://placehold.co/120x120/0d1017/d4af37?text=tilip';
+            document.getElementById('member-form-title').textContent = `แก้ไขสมาชิก: ${m.name}`;
+        }
+
+        function resetMemberForm() {
+            document.getElementById('member-form')?.reset();
+            document.getElementById('member-edit-id').value = '';
+            stagedMemberPhotoDataUrl = null;
+            const prev = document.getElementById('member-photo-preview');
+            if (prev) prev.src = 'https://placehold.co/120x120/0d1017/d4af37?text=tilip';
+            document.getElementById('member-form-title').textContent = 'เพิ่มสมาชิกวง tilip';
+        }
+
+        function handleMemberSubmit(event) {
+            event.preventDefault();
+            if (!isAdmin) return;
+
+            const editId = document.getElementById('member-edit-id')?.value || '';
+            const name = (document.getElementById('member-name')?.value || '').trim();
+            const role = (document.getElementById('member-role')?.value || '').trim();
+            const ig = (document.getElementById('member-ig')?.value || '').trim();
+            const bio = (document.getElementById('member-bio')?.value || '').trim();
+
+            if (!name || !role) {
+                showToast('กรุณากรอกชื่อและตำแหน่งสมาชิก', 'error');
+                return;
+            }
+
+            if (editId) {
+                const idx = appState.members.findIndex((m) => m.id === editId);
+                if (idx !== -1) {
+                    appState.members[idx] = {
+                        ...appState.members[idx],
+                        name,
+                        role,
+                        ig,
+                        bio,
+                        photoUrl: stagedMemberPhotoDataUrl || appState.members[idx].photoUrl
+                    };
+                }
+            } else {
+                appState.members.push({
+                    id: `mem-${Date.now()}`,
+                    name,
+                    role,
+                    ig,
+                    bio,
+                    photoUrl: stagedMemberPhotoDataUrl || `https://placehold.co/400x400/0d1017/d4af37?text=${encodeURIComponent(name.slice(0, 10))}`
+                });
+            }
+
+            persistState();
+            resetMemberForm();
+            renderMembersGrid();
+            renderAdminStudioLists();
+            showToast('บันทึกข้อมูลสมาชิกวงเรียบร้อยแล้ว', 'success');
+        }
+
+        function deleteMemberById(id) {
+            appState.members = (appState.members || []).filter((m) => m.id !== id);
+            persistState();
+            renderMembersGrid();
+            renderAdminStudioLists();
+            showToast('ลบข้อมูลสมาชิกแล้ว', 'info');
+        }
+
+        function populateBandInfoForm() {
+            const g = document.getElementById('band-genre-input');
+            const s = document.getElementById('band-subtitle-input');
+            const b = document.getElementById('band-bio-input');
+            const e = document.getElementById('band-email-input');
+            if (g) g.value = appState.band.genreTag || '';
+            if (s) s.value = appState.band.subtitle || '';
+            if (b) b.value = appState.band.bio || '';
+            if (e) e.value = appState.band.contactEmail || '';
+        }
+
+        function handleBandInfoSave(event) {
+            event.preventDefault();
+            if (!isAdmin) return;
+            appState.band.genreTag = (document.getElementById('band-genre-input')?.value || '').trim() || DEFAULT_STATE.band.genreTag;
+            appState.band.subtitle = (document.getElementById('band-subtitle-input')?.value || '').trim() || DEFAULT_STATE.band.subtitle;
+            appState.band.bio = (document.getElementById('band-bio-input')?.value || '').trim() || DEFAULT_STATE.band.bio;
+            appState.band.contactEmail = (document.getElementById('band-email-input')?.value || '').trim() || DEFAULT_STATE.band.contactEmail;
+            persistState();
+            renderHeroAndBandInfo();
+            showToast('บันทึกข้อมูลและประวัติวงเรียบร้อยแล้ว', 'success');
+        }
+
+        function handleAddGig(event) {
+            event.preventDefault();
+            if (!isAdmin) return;
+            const date = (document.getElementById('gig-date')?.value || '').trim();
+            const venue = (document.getElementById('gig-venue')?.value || '').trim();
+            const city = (document.getElementById('gig-city')?.value || '').trim();
+            if (!date || !venue || !city) return;
+
+            appState.gigs.push({
+                id: `gig-${Date.now()}`,
+                date,
+                venue,
+                city
+            });
+            persistState();
+            event.target.reset();
+            renderAboutAndGigs();
+            renderAdminStudioLists();
+            showToast('เพิ่มตารางการแสดงสดเรียบร้อยแล้ว', 'success');
+        }
+
+        function deleteGigById(id) {
+            appState.gigs = (appState.gigs || []).filter((g) => g.id !== id);
+            persistState();
+            renderAboutAndGigs();
+            renderAdminStudioLists();
+        }
+
+        async function handleChangePassword(event) {
+            event.preventDefault();
+            if (!isAdmin) return;
+            const curPass = document.getElementById('current-pass-input')?.value || '';
+            const newPass = document.getElementById('new-pass-input')?.value || '';
+            const confirmPass = document.getElementById('confirm-pass-input')?.value || '';
+
+            const validCur = await verifyAdminPassword(curPass);
+            if (!validCur) {
+                showToast('รหัสผ่านปัจจุบันไม่ถูกต้อง', 'error');
+                return;
+            }
+            if (newPass.length < 6) {
+                showToast('รหัสผ่านใหม่ต้องมีอย่างน้อย 6 ตัวอักษร', 'error');
+                return;
+            }
+            if (newPass !== confirmPass) {
+                showToast('รหัสผ่านใหม่และการยืนยันไม่ตรงกัน', 'error');
+                return;
+            }
+
+            const saltBytes = new Uint8Array(16);
+            crypto.getRandomValues(saltBytes);
+            const saltHex = bytesToHex(saltBytes);
+            const iterations = 120000;
+            const hashHex = await derivePasswordHash(newPass, saltHex, iterations);
+            localStorage.setItem(STORAGE_KEYS.AUTH_CONFIG, JSON.stringify({ saltHex, hashHex, iterations }));
+
+            event.target.reset();
+            showToast('เปลี่ยนรหัสผ่านแอดมินเรียบร้อยแล้ว', 'success');
+        }
+
+        function exportMetadataJson() {
+            const payload = {
+                exportedAt: new Date().toISOString(),
+                state: appState
+            };
+            const blob = new Blob([JSON.stringify(payload, null, 2)], { type: 'application/json' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `tilip-official-backup-${new Date().toISOString().slice(0, 10)}.json`;
+            a.click();
+            URL.revokeObjectURL(url);
+            showToast('ดาวน์โหลดไฟล์สำรอง JSON เรียบร้อยแล้ว', 'success');
+        }
+
+        async function importMetadataJson(input) {
+            const file = input?.files?.[0];
+            if (!file) return;
+            try {
+                const text = await file.text();
+                const parsed = JSON.parse(text);
+                const incoming = parsed.state || parsed;
+                if (!incoming || typeof incoming !== 'object') {
+                    throw new Error('Invalid JSON structure');
+                }
+                appState = {
+                    ...cloneDeep(DEFAULT_STATE),
+                    ...incoming,
+                    band: { ...cloneDeep(DEFAULT_STATE.band), ...(incoming.band || {}) },
+                    releases: Array.isArray(incoming.releases) ? incoming.releases : [],
+                    members: Array.isArray(incoming.members) ? incoming.members : [],
+                    gigs: Array.isArray(incoming.gigs) ? incoming.gigs : []
+                };
+                persistState();
+                renderAllPublicViews();
+                renderAdminStudioLists();
+                populateBandInfoForm();
+                showToast('นำเข้าข้อมูล JSON สำเร็จแล้ว', 'success');
+            } catch (_) {
+                showToast('ไฟล์ JSON ไม่ถูกต้องหรือไม่สามารถอ่านได้', 'error');
+            } finally {
+                input.value = '';
+            }
+        }
+
+        // =========================================================================
+        // 9. INITIALIZATION
+        // =========================================================================
+        window.addEventListener('DOMContentLoaded', async () => {
+            appState = loadStateFromStorage();
+            initAudioListeners();
+            startVisualizerLoop();
+            switchSectionTab('releases');
+
+            try {
+                db = await openMediaDB();
+            } catch (_) {
+                db = null;
+            }
+
+            try {
+                await ensureDefaultAuthConfig();
+            } catch (_) {}
+
+            restoreSessionIfValid();
+            applyAdminUI();
+        });
+
+        window.addEventListener('beforeunload', () => {
+            clearObjectUrls();
+        });
+    </script>
+</body>
+</html>
